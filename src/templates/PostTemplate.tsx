@@ -13,7 +13,7 @@ const PostTemplate: FunctionComponent<IPostTemplateProps> = React.memo(props => 
   const { idx, title, html } = props.pageContext
   console.log('id', idx)
   let disqusConfig = {
-    url: `none`,
+    url: `https://jngmk.netlify.com/`,
     identifier: idx,
     title: title,
   }
@@ -21,7 +21,7 @@ const PostTemplate: FunctionComponent<IPostTemplateProps> = React.memo(props => 
     <Layout>
       <h1>{title}</h1>
       <div dangerouslySetInnerHTML={{ __html: html }}></div>
-      <CommentCount config={disqusConfig} placeholder={'...'} />
+      {/* <CommentCount config={disqusConfig} placeholder={'...'} /> */}
       <Disqus config={disqusConfig} />
     </Layout>
   );
