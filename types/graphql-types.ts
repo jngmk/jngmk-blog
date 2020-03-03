@@ -2090,13 +2090,13 @@ export type SitePageConnectionGroupArgs = {
 };
 
 export type SitePageContext = {
-  idx?: Maybe<Scalars['String']>,
+  postId?: Maybe<Scalars['String']>,
   html?: Maybe<Scalars['String']>,
   title?: Maybe<Scalars['String']>,
 };
 
 export type SitePageContextFilterInput = {
-  idx?: Maybe<StringQueryOperatorInput>,
+  postId?: Maybe<StringQueryOperatorInput>,
   html?: Maybe<StringQueryOperatorInput>,
   title?: Maybe<StringQueryOperatorInput>,
 };
@@ -2199,7 +2199,7 @@ export type SitePageFieldsEnum =
   'component' |
   'componentChunkName' |
   'isCreatedByStatefulCreatePages' |
-  'context___idx' |
+  'context___postId' |
   'context___html' |
   'context___title' |
   'pluginCreator___id' |
@@ -2255,6 +2255,7 @@ export type SitePageFieldsEnum =
   'pluginCreator___pluginOptions___display' |
   'pluginCreator___pluginOptions___icon' |
   'pluginCreator___pluginOptions___shortname' |
+  'pluginCreator___pluginOptions___whitelist' |
   'pluginCreator___pluginOptions___pathCheck' |
   'pluginCreator___nodeAPIs' |
   'pluginCreator___browserAPIs' |
@@ -2454,6 +2455,7 @@ export type SitePluginFieldsEnum =
   'pluginOptions___display' |
   'pluginOptions___icon' |
   'pluginOptions___shortname' |
+  'pluginOptions___whitelist' |
   'pluginOptions___pathCheck' |
   'nodeAPIs' |
   'browserAPIs' |
@@ -2582,6 +2584,7 @@ export type SitePluginPluginOptions = {
   display?: Maybe<Scalars['String']>,
   icon?: Maybe<Scalars['String']>,
   shortname?: Maybe<Scalars['String']>,
+  whitelist?: Maybe<Array<Maybe<Scalars['String']>>>,
   pathCheck?: Maybe<Scalars['Boolean']>,
 };
 
@@ -2598,6 +2601,7 @@ export type SitePluginPluginOptionsFilterInput = {
   display?: Maybe<StringQueryOperatorInput>,
   icon?: Maybe<StringQueryOperatorInput>,
   shortname?: Maybe<StringQueryOperatorInput>,
+  whitelist?: Maybe<StringQueryOperatorInput>,
   pathCheck?: Maybe<BooleanQueryOperatorInput>,
 };
 

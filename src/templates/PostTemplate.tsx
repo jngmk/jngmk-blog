@@ -2,10 +2,7 @@ import React, { FunctionComponent } from 'react';
 import Layout from '../components/layout';
 import { ITemplateProps } from '../interface'
 import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
-import dotenv from 'dotenv'
-import path from 'path'
 
-dotenv.config({ path: path.join(__dirname, '.env') })
 
 type IPostTemplateProps = ITemplateProps<{
   postId: string;
@@ -16,7 +13,7 @@ type IPostTemplateProps = ITemplateProps<{
 const PostTemplate: FunctionComponent<IPostTemplateProps> = React.memo(props => {
   const { postId, title, html } = props.pageContext
   const MY_URL = process.env.MY_URL
-  console.log('id', postId)
+  console.log('id', postId, MY_URL)
   let disqusConfig = {
     url: `${MY_URL}`,
     identifier: postId,

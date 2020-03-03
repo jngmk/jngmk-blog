@@ -54,6 +54,12 @@ module.exports = {
         shortname: `jngmk`
       }
     },
+    {
+      resolve: `gatsby-plugin-env-variables`,
+      options: {
+        whitelist: ["MY_URL"]
+      },
+    },
     
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
