@@ -20,6 +20,7 @@ const PostTemplate: FunctionComponent<IPostTemplateProps> = React.memo(props => 
     identifier: postId,
     title: title,
   }
+  console.log(disqusConfig)
   return (
     <Layout>
       <h1>{title}</h1>
