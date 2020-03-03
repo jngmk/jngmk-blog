@@ -2,20 +2,24 @@ import React, { FunctionComponent } from 'react';
 import Layout from '../components/layout';
 import { ITemplateProps } from '../interface'
 import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
+import dotenv from 'dotenv'
+import path from 'path'
+
+dotenv.config({ path: path.join(__dirname, '.env') })
 
 type IPostTemplateProps = ITemplateProps<{
-  idx: string;
+  postId: string;
   title: string;
   html: string;
 }>;
 
 const PostTemplate: FunctionComponent<IPostTemplateProps> = React.memo(props => {
-  const { idx, title, html } = props.pageContext
-  const myURL = 'https://jngmk.netlify.com/'
-  console.log('id', idx)
+  const { postId, title, html } = props.pageContext
+  const MY_URL = process.env.MY_URL
+  console.log('id', postId)
   let disqusConfig = {
-    url: `${myURL + title}`,
-    identifier: idx,
+    url: `${MY_URL}${title}`,
+    identifier: postId,
     title: title,
   }
   return (

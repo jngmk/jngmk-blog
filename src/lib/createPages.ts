@@ -30,7 +30,7 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
     createPage({
       path: node.frontmatter.title,
       context: {
-        idx: node.id,
+        postId: node.id,
         html: node.html,
         title: node.frontmatter.title,
       },
