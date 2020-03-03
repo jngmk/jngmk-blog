@@ -18,7 +18,7 @@ const PostTemplate: FunctionComponent<IPostTemplateProps> = React.memo(props => 
   const MY_URL = process.env.MY_URL
   console.log('id', postId)
   let disqusConfig = {
-    url: `${MY_URL}${title}`,
+    url: `${MY_URL}`,
     identifier: postId,
     title: title,
   }
