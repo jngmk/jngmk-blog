@@ -689,6 +689,7 @@ export type FileFieldsEnum =
   'internal___type' |
   'childMarkdownRemark___id' |
   'childMarkdownRemark___frontmatter___title' |
+  'childMarkdownRemark___frontmatter___slug' |
   'childMarkdownRemark___excerpt' |
   'childMarkdownRemark___rawMarkdownBody' |
   'childMarkdownRemark___fileAbsolutePath' |
@@ -1446,6 +1447,7 @@ export type MarkdownRemarkEdge = {
 export type MarkdownRemarkFieldsEnum = 
   'id' |
   'frontmatter___title' |
+  'frontmatter___slug' |
   'excerpt' |
   'rawMarkdownBody' |
   'fileAbsolutePath' |
@@ -1566,10 +1568,12 @@ export type MarkdownRemarkFilterInput = {
 
 export type MarkdownRemarkFrontmatter = {
   title?: Maybe<Scalars['String']>,
+  slug?: Maybe<Scalars['String']>,
 };
 
 export type MarkdownRemarkFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>,
+  slug?: Maybe<StringQueryOperatorInput>,
 };
 
 export type MarkdownRemarkGroupConnection = {
@@ -2093,12 +2097,14 @@ export type SitePageContext = {
   postId?: Maybe<Scalars['String']>,
   html?: Maybe<Scalars['String']>,
   title?: Maybe<Scalars['String']>,
+  slug?: Maybe<Scalars['String']>,
 };
 
 export type SitePageContextFilterInput = {
   postId?: Maybe<StringQueryOperatorInput>,
   html?: Maybe<StringQueryOperatorInput>,
   title?: Maybe<StringQueryOperatorInput>,
+  slug?: Maybe<StringQueryOperatorInput>,
 };
 
 export type SitePageEdge = {
@@ -2202,6 +2208,7 @@ export type SitePageFieldsEnum =
   'context___postId' |
   'context___html' |
   'context___title' |
+  'context___slug' |
   'pluginCreator___id' |
   'pluginCreator___parent___id' |
   'pluginCreator___parent___parent___id' |
@@ -2662,7 +2669,7 @@ export type Unnamed_3_QueryVariables = {};
 
 export type Unnamed_3_Query = { allMarkdownRemark: { edges: Array<{ node: (
         Pick<MarkdownRemark, 'id' | 'html'>
-        & { frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title'>> }
+        & { frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'slug'>> }
       ) }> } };
 
 export type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;

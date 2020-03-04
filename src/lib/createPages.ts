@@ -11,6 +11,7 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
           node {
             frontmatter {
               title
+              slug
             }
             id
             html
@@ -28,11 +29,12 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
   const blogPostTemplate = path.resolve(`src/templates/PostTemplate.tsx`);
   data.allMarkdownRemark.edges.forEach(({ node }: any) => {
     createPage({
-      path: node.frontmatter.title,
+      path: node.frontmatter.slug,
       context: {
         postId: node.id,
         html: node.html,
         title: node.frontmatter.title,
+        slug: node.frontmatter.slug
       },
       component: blogPostTemplate,
     });
