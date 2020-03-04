@@ -1,6 +1,6 @@
 ---
 title: byebye
-slug: post/testtest/
+slug: /post/testtest
 ---
 
 # Bye!

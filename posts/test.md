@@ -1,6 +1,6 @@
 ---
 title: testtest
-slug: post/test/
+slug: /post/test
 ---
 
 # Hi!
