@@ -3,7 +3,6 @@ module.exports = {
     title: `jngmk dev`,
     description: `concentrate`,
     author: `@jngmk`,
-    disqusShortname: `jngmk`
   },
   plugins: [
     `gatsby-plugin-typescript`,

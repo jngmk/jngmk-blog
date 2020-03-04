@@ -2027,7 +2027,6 @@ export type SiteFieldsEnum =
   'siteMetadata___title' |
   'siteMetadata___description' |
   'siteMetadata___author' |
-  'siteMetadata___disqusShortname' |
   'port' |
   'host' |
   'polyfill' |
@@ -2621,14 +2620,12 @@ export type SiteSiteMetadata = {
   title?: Maybe<Scalars['String']>,
   description?: Maybe<Scalars['String']>,
   author?: Maybe<Scalars['String']>,
-  disqusShortname?: Maybe<Scalars['String']>,
 };
 
 export type SiteSiteMetadataFilterInput = {
   title?: Maybe<StringQueryOperatorInput>,
   description?: Maybe<StringQueryOperatorInput>,
   author?: Maybe<StringQueryOperatorInput>,
-  disqusShortname?: Maybe<StringQueryOperatorInput>,
 };
 
 export type SiteSortInput = {
