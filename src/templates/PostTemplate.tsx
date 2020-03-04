@@ -17,7 +17,7 @@ const PostTemplate: FunctionComponent<IPostTemplateProps> = React.memo(props => 
   const MY_URL = 'https://jngmk.netlify.com/'
   console.log('id', postId, 'url', MY_URL)
   let disqusConfig = {
-    url: `${MY_URL}${slug}`,
+    url: ``,
     identifier: postId,
     title: title,
   }
