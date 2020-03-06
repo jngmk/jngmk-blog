@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `jngmk dev`,
+    title: `jeong.kim`,
     description: `concentrate`,
     author: `@jngmk`,
   },
@@ -10,7 +10,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'posts',
-        path: `${__dirname}/posts`,
+        path: `${__dirname}/src/posts`,
       },
     },
     `gatsby-transformer-remark`,
@@ -57,6 +57,25 @@ module.exports = {
       resolve: `gatsby-plugin-env-variables`,
       options: {
         whitelist: ["MY_URL"]
+      },
+    },
+    {
+      resolve: `gatsby-plugin-emotion`,
+      options: {
+        // Accepts all options defined by `babel-plugin-emotion` plugin.
+      },
+    },
+    {
+      resolve: `gatsby-plugin-webfonts`,
+      options: {
+        fonts: {
+          google: [
+            {
+              family: "Noto Sans KR",
+              variants: ["100", "300", "400", "500", "700", "900"],
+            },
+          ],
+        },
       },
     },
     

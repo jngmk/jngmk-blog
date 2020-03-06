@@ -11,6 +11,7 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
           node {
             frontmatter {
               title
+              date
               slug
             }
             id
@@ -24,7 +25,6 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
   if (errors) {
     throw errors;
   }
-  // console.log('data', JSON.parse(JSON.stringify(data.allMarkdownRemark.nodes)))
 
   const blogPostTemplate = path.resolve(`src/templates/PostTemplate.tsx`);
   data.allMarkdownRemark.edges.forEach(({ node }: any) => {
@@ -34,6 +34,7 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
         postId: node.id,
         html: node.html,
         title: node.frontmatter.title,
+        date: node.frontmatter.date,
         slug: node.frontmatter.slug
       },
       component: blogPostTemplate,

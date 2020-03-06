@@ -5,16 +5,31 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
+import React, { FunctionComponent, memo } from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import { css } from '@emotion/core'
 
-import Header from "./header"
+import Navbar from "./Navbar"
 import "./layout.css"
 
-const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
+const Layout:FunctionComponent = memo(({ children }) => {
+  const breakpoints = [576, 768, 992, 1200]
+
+  const mq = breakpoints.map(
+    bp => `@media (min-width: ${bp}px)`
+  )
+
+  const layoutCss = css`
+    margin: 0 auto;
+    max-width: 960px;
+    padding: 0 0.6vh 3.5vh;
+    ${mq[1]} {
+      padding: 0 1.4vh 3.5vh;
+    }
+  `
+
+  const SiteTitle = useStaticQuery(graphql`
+    query {
       site {
         siteMetadata {
           title
@@ -25,27 +40,14 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
+      <Navbar siteTitle={SiteTitle.site.siteMetadata.title} />
+      <div css={layoutCss}>
         <main>{children}</main>
         <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
         </footer>
       </div>
     </>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
+});
 
 export default Layout

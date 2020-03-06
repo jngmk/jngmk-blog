@@ -1,33 +1,28 @@
 import React, { FunctionComponent } from 'react';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
+import PostHeader from '../components/PostHeader'
+import MarkdownToHtml from '../components/MarkdownToHtml'
+import Comment from '../components/Comment'
 import { ITemplateProps } from '../interface'
-import { Disqus, CommentCount } from 'gatsby-plugin-disqus'
 
 
 type IPostTemplateProps = ITemplateProps<{
   postId: string;
   title: string;
+  date: string;
   html: string;
   slug: string;
 }>;
 
 const PostTemplate: FunctionComponent<IPostTemplateProps> = React.memo(props => {
-  const { postId, title, html, slug } = props.pageContext
-  // const MY_URL = process.env.MY_URL
-  const MY_URL = 'https://jngmk.netlify.com'
-  console.log('id', postId, 'url', MY_URL)
-  const disqusConfig = {
-    url: `${MY_URL}${slug}`,
-    identifier: postId,
-    title: title,
-  }
-  console.log(disqusConfig)
+  const { postId, title, date, html, slug } = props.pageContext
+  console.log(date)
   return (
     <Layout>
-      <h1>{title}</h1>
-      <div dangerouslySetInnerHTML={{ __html: html }}></div>
+      <PostHeader title={title} date={date} />
+      <MarkdownToHtml html={html} />
       {/* <CommentCount config={disqusConfig} placeholder={'...'} /> */}
-      <Disqus config={disqusConfig} />
+      <Comment identifier={postId} slug={slug} title={title} />
     </Layout>
   );
 });

@@ -689,6 +689,7 @@ export type FileFieldsEnum =
   'internal___type' |
   'childMarkdownRemark___id' |
   'childMarkdownRemark___frontmatter___title' |
+  'childMarkdownRemark___frontmatter___date' |
   'childMarkdownRemark___frontmatter___slug' |
   'childMarkdownRemark___excerpt' |
   'childMarkdownRemark___rawMarkdownBody' |
@@ -1447,6 +1448,7 @@ export type MarkdownRemarkEdge = {
 export type MarkdownRemarkFieldsEnum = 
   'id' |
   'frontmatter___title' |
+  'frontmatter___date' |
   'frontmatter___slug' |
   'excerpt' |
   'rawMarkdownBody' |
@@ -1568,11 +1570,21 @@ export type MarkdownRemarkFilterInput = {
 
 export type MarkdownRemarkFrontmatter = {
   title?: Maybe<Scalars['String']>,
+  date?: Maybe<Scalars['Date']>,
   slug?: Maybe<Scalars['String']>,
+};
+
+
+export type MarkdownRemarkFrontmatterDateArgs = {
+  formatString?: Maybe<Scalars['String']>,
+  fromNow?: Maybe<Scalars['Boolean']>,
+  difference?: Maybe<Scalars['String']>,
+  locale?: Maybe<Scalars['String']>
 };
 
 export type MarkdownRemarkFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>,
+  date?: Maybe<DateQueryOperatorInput>,
   slug?: Maybe<StringQueryOperatorInput>,
 };
 
@@ -2271,6 +2283,7 @@ export type SitePageContext = {
   postId?: Maybe<Scalars['String']>,
   html?: Maybe<Scalars['String']>,
   title?: Maybe<Scalars['String']>,
+  date?: Maybe<Scalars['Date']>,
   slug?: Maybe<Scalars['String']>,
 };
 
@@ -2278,6 +2291,7 @@ export type SitePageContextFilterInput = {
   postId?: Maybe<StringQueryOperatorInput>,
   html?: Maybe<StringQueryOperatorInput>,
   title?: Maybe<StringQueryOperatorInput>,
+  date?: Maybe<DateQueryOperatorInput>,
   slug?: Maybe<StringQueryOperatorInput>,
 };
 
@@ -2383,6 +2397,7 @@ export type SitePageFieldsEnum =
   'context___postId' |
   'context___html' |
   'context___title' |
+  'context___date' |
   'context___slug' |
   'pluginCreator___id' |
   'pluginCreator___parent___id' |
@@ -2438,6 +2453,7 @@ export type SitePageFieldsEnum =
   'pluginCreator___pluginOptions___icon' |
   'pluginCreator___pluginOptions___shortname' |
   'pluginCreator___pluginOptions___whitelist' |
+  'pluginCreator___pluginOptions___fonts___google' |
   'pluginCreator___pluginOptions___pathCheck' |
   'pluginCreator___nodeAPIs' |
   'pluginCreator___browserAPIs' |
@@ -2638,6 +2654,9 @@ export type SitePluginFieldsEnum =
   'pluginOptions___icon' |
   'pluginOptions___shortname' |
   'pluginOptions___whitelist' |
+  'pluginOptions___fonts___google' |
+  'pluginOptions___fonts___google___family' |
+  'pluginOptions___fonts___google___variants' |
   'pluginOptions___pathCheck' |
   'nodeAPIs' |
   'browserAPIs' |
@@ -2764,6 +2783,7 @@ export type SitePluginPluginOptions = {
   icon?: Maybe<Scalars['String']>,
   shortname?: Maybe<Scalars['String']>,
   whitelist?: Maybe<Array<Maybe<Scalars['String']>>>,
+  fonts?: Maybe<SitePluginPluginOptionsFonts>,
   pathCheck?: Maybe<Scalars['Boolean']>,
 };
 
@@ -2781,7 +2801,30 @@ export type SitePluginPluginOptionsFilterInput = {
   icon?: Maybe<StringQueryOperatorInput>,
   shortname?: Maybe<StringQueryOperatorInput>,
   whitelist?: Maybe<StringQueryOperatorInput>,
+  fonts?: Maybe<SitePluginPluginOptionsFontsFilterInput>,
   pathCheck?: Maybe<BooleanQueryOperatorInput>,
+};
+
+export type SitePluginPluginOptionsFonts = {
+  google?: Maybe<Array<Maybe<SitePluginPluginOptionsFontsGoogle>>>,
+};
+
+export type SitePluginPluginOptionsFontsFilterInput = {
+  google?: Maybe<SitePluginPluginOptionsFontsGoogleFilterListInput>,
+};
+
+export type SitePluginPluginOptionsFontsGoogle = {
+  family?: Maybe<Scalars['String']>,
+  variants?: Maybe<Array<Maybe<Scalars['String']>>>,
+};
+
+export type SitePluginPluginOptionsFontsGoogleFilterInput = {
+  family?: Maybe<StringQueryOperatorInput>,
+  variants?: Maybe<StringQueryOperatorInput>,
+};
+
+export type SitePluginPluginOptionsFontsGoogleFilterListInput = {
+  elemMatch?: Maybe<SitePluginPluginOptionsFontsGoogleFilterInput>,
 };
 
 export type SitePluginSortInput = {
@@ -2822,12 +2865,7 @@ export type StringQueryOperatorInput = {
 export type Unnamed_1_QueryVariables = {};
 
 
-export type Unnamed_1_Query = { placeholderImage: Maybe<{ childImageSharp: Maybe<{ fluid: Maybe<GatsbyImageSharpFluidFragment> }> }> };
-
-export type SiteTitleQueryQueryVariables = {};
-
-
-export type SiteTitleQueryQuery = { site: Maybe<{ siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+export type Unnamed_1_Query = { site: Maybe<{ siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
 
 export type Unnamed_2_QueryVariables = {};
 
@@ -2837,10 +2875,23 @@ export type Unnamed_2_Query = { site: Maybe<{ siteMetadata: Maybe<Pick<SiteSiteM
 export type Unnamed_3_QueryVariables = {};
 
 
-export type Unnamed_3_Query = { allMarkdownRemark: { edges: Array<{ node: (
+export type Unnamed_3_Query = { placeholderImage: Maybe<{ childImageSharp: Maybe<{ fluid: Maybe<GatsbyImageSharpFluidFragment> }> }> };
+
+export type Unnamed_4_QueryVariables = {};
+
+
+export type Unnamed_4_Query = { allMarkdownRemark: { edges: Array<{ node: (
         Pick<MarkdownRemark, 'id' | 'html'>
-        & { frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'slug'>> }
+        & { frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'date' | 'slug'>> }
       ) }> } };
+
+export type Unnamed_5_QueryVariables = {};
+
+
+export type Unnamed_5_Query = { allMarkdownRemark: { nodes: Array<(
+      Pick<MarkdownRemark, 'excerpt' | 'id'>
+      & { frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'slug' | 'date'>> }
+    )> } };
 
 export type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 

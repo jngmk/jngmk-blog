@@ -1,21 +1,39 @@
-import React, { FunctionComponent } from "react"
-import { Link } from "gatsby"
+import { graphql, useStaticQuery } from 'gatsby';
+import React from 'react';
+import { Query } from '../../types/graphql-types'
+// import PostCategory from '../components/PostCategory';
+import Layout from "../components/Layout"
+import PostList from '../components/PostList';
+import SEO from '../components/SEO';
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
+const LatestPostListQuery = graphql`
+  query {
+    allMarkdownRemark(
+      sort: { order: DESC, fields: frontmatter___date }
+    ) {
+      nodes {
+        frontmatter {
+          title
+          slug
+          date
+        }
+        excerpt(truncate: true, pruneLength: 150)
+        id
+      }
+    }
+  }
+`;
 
-const IndexPage:FunctionComponent = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-)
+const IndexPage: React.FC = () => {
+  const { allMarkdownRemark } = useStaticQuery<Query>(LatestPostListQuery);
 
-export default IndexPage
+  return (
+    <Layout>
+      <SEO title="Home"/>
+      {/* <PostCategory /> */}
+      <PostList nodes={allMarkdownRemark.nodes} />
+    </Layout>
+  );
+};
+
+export default IndexPage;
