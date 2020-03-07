@@ -6,7 +6,7 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
   const { createPage } = actions;
   const { data, errors } = await graphql<Query>(`
     query {
-      allMarkdownRemark(filter: {frontmatter: {category1: {eq: "post"}}}, sort: {fields: frontmatter___date, order: DESC}) {
+      allMarkdownRemark(filter: {frontmatter: {category1: {ne: "about"}}}, sort: {fields: frontmatter___date, order: DESC}) {
         edges {
           node {
             frontmatter {
