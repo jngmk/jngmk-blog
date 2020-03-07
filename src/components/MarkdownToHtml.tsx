@@ -6,9 +6,16 @@ type IMarkdownToHtmlProps = {
 }
 
 const MarkdownToHtml: React.FC<IMarkdownToHtmlProps> = React.memo(({ html }) => {
-   const markdownToHtmlCss = css`
+  const breakpoints = [576, 768, 992, 1200];
+  const mq = breakpoints.map(bp => `@media (min-width: ${bp}px)`);
 
-   `
+  const markdownToHtmlCss = css`
+    padding: 0 1.5vh;
+    ${mq[1]} {
+      padding: 0 2.2vh;
+    }
+
+  `
 
   return (
     <section

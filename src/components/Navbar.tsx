@@ -8,14 +8,13 @@ type INavbarProps = {
 
 const Navbar: FunctionComponent<INavbarProps> = memo(({ siteTitle }) => {
   const breakpoints = [576, 768, 992, 1200];
-
   const mq = breakpoints.map(bp => `@media (min-width: ${bp}px)`);
 
   const navbarCss = css`
     background-color: white;
     border-bottom: 0.1vh solid #eeeeee;
     margin-bottom: 2vh;
-    padding: 2vh 2vh;
+    padding: 2vh 2.2vh;
     ${mq[1]} {
       padding: 2vh 3.5vh;
     }
@@ -23,17 +22,16 @@ const Navbar: FunctionComponent<INavbarProps> = memo(({ siteTitle }) => {
     div {
       display: inline-block;
       margin: 0;
-      font-size: 1.3vh;
+      font-size: 1.5vh;
       font-weight: 500;
-      ${mq[1]} {
-        font-size: 1.5vh;
-      }
       a {
         color: #234c34;
         text-decoration: none;
         margin-left: 2vh;
-        &:hover {
-          color: #0d8d6c;
+        ${mq[3]} {
+          &:hover {
+            color: #0d8d6c;
+          }
         }
       }
     }
@@ -46,11 +44,8 @@ const Navbar: FunctionComponent<INavbarProps> = memo(({ siteTitle }) => {
     }
 
     .nav-main {
-      font-size: 1.5vh;
+      font-size: 1.7vh;
       font-weight: 900;
-      ${mq[1]} {
-        font-size: 1.7vh;
-      }
       a {
         margin: 0;
       }
@@ -64,7 +59,7 @@ const Navbar: FunctionComponent<INavbarProps> = memo(({ siteTitle }) => {
           <Link to="/">{siteTitle}</Link>
         </div>
         <div>
-          <Link to="/posts">blog</Link>
+          <Link to="/blog">blog</Link>
           <Link to="/daily">daily</Link>
           <Link to="/about">about</Link>
         </div>
