@@ -27,3 +27,15 @@ export type IDisqusProps = {
   slug: string;
   title: string;
 }
+
+export type IPostCategoryListProps = {
+  renderPage: string;
+  totalCount: number;
+  categoryList: Array<string>;
+}
+
+export type IPostCategoryItemProps = {
+  categoryName: string;
+  totalCount: number;
+  pagePath: string;
+}

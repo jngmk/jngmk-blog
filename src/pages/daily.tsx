@@ -8,7 +8,7 @@ import PostList from '../components/PostList';
 
 const LatestPostListQuery = graphql`
   query {
-    allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}, filter: {frontmatter: {category1: {ne: "about"}}}) {
+    allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}, filter: {frontmatter: {category1: {eq: "daily"}}}) {
       nodes {
         frontmatter {
           title
@@ -21,19 +21,20 @@ const LatestPostListQuery = graphql`
       totalCount
     }
   }
+  
 `;
 
-const IndexPage: FunctionComponent = () => {
+const DailyPage: FunctionComponent = () => {
   const { allMarkdownRemark } = useStaticQuery<Query>(LatestPostListQuery);
   const categoryList = [];
 
   return (
     <Layout>
-      <SEO title="Home"/>
-      <PostCategoryList renderPage={''} totalCount={allMarkdownRemark.totalCount} categoryList={categoryList} />
+      <SEO title="Daily"/>
+      <PostCategoryList renderPage={'daily'} totalCount={allMarkdownRemark.totalCount} categoryList={categoryList} />
       <PostList nodes={allMarkdownRemark.nodes} />
     </Layout>
   );
 };
 
-export default IndexPage;
+export default DailyPage;

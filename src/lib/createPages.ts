@@ -6,13 +6,13 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
   const { createPage } = actions;
   const { data, errors } = await graphql<Query>(`
     query {
-      allMarkdownRemark {
+      allMarkdownRemark(filter: {frontmatter: {category1: {eq: "post"}}}, sort: {fields: frontmatter___date, order: DESC}) {
         edges {
           node {
             frontmatter {
-              title
               date
               slug
+              title
             }
             id
             html

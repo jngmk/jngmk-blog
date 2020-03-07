@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from 'react'
+import { css } from '@emotion/core'
 import { IDisqusProps } from '../interface'
 import { Disqus } from 'gatsby-plugin-disqus'
 
@@ -12,8 +13,18 @@ const Comment: FunctionComponent<IDisqusProps> = React.memo(props => {
     title: title,
   }
 
+  const breakpoints = [576, 768, 992, 1200];
+  const mq = breakpoints.map(bp => `@media (min-width: ${bp}px)`);
+
+  const commentCss = css`
+    padding: 0 1.5vh;
+    ${mq[1]} {
+      padding: 0 2.2vh;
+    }
+  `
+
   return (
-    <Disqus config={disqusConfig} />
+    <Disqus config={disqusConfig} css={commentCss} />
   );
 });
 
