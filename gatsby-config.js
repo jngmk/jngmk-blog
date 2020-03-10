@@ -13,7 +13,13 @@ module.exports = {
         path: `${__dirname}/src/posts`,
       },
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        excerpt_separator: `<!-- end -->`,
+        plugins: [],
+      },
+    },
     {
       resolve: `gatsby-plugin-graphql-codegen`,
       options: {

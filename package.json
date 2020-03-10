@@ -9,7 +9,7 @@
     "@emotion/styled": "^10.0.27",
     "@types/react-helmet": "^5.0.15",
     "gatsby": "^2.19.7",
-    "gatsby-cli": "^2.10.2",
+    "gatsby-cli": "^2.10.4",
     "gatsby-image": "^2.2.39",
     "gatsby-plugin-disqus": "^1.1.4",
     "gatsby-plugin-emotion": "^4.1.23",

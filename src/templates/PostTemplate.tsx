@@ -9,7 +9,7 @@ import { ITemplateProps } from '../interface'
 type IPostTemplateProps = ITemplateProps<{
   postId: string;
   title: string;
-  date: string;
+  date: Date;
   html: string;
   slug: string;
 }>;

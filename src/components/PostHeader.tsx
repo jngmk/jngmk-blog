@@ -3,7 +3,7 @@ import { css } from '@emotion/core';
 
 export interface IPostHeaderProps {
   title: string;
-  date: string;
+  date: Date;
 }
 
 const PostHeader: FunctionComponent<IPostHeaderProps> = memo(
@@ -39,7 +39,7 @@ const PostHeader: FunctionComponent<IPostHeaderProps> = memo(
     return (
       <header css={postHeaderCss}>
         <h2>{title}</h2>
-        <time dateTime={date}>{date}</time>
+        <time dateTime={date.toString()}>{date}</time>
       </header>
     );
   }

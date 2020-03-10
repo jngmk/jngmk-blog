@@ -689,9 +689,10 @@ export type FileFieldsEnum =
   'internal___type' |
   'childMarkdownRemark___id' |
   'childMarkdownRemark___frontmatter___title' |
+  'childMarkdownRemark___frontmatter___category1' |
   'childMarkdownRemark___frontmatter___date' |
   'childMarkdownRemark___frontmatter___slug' |
-  'childMarkdownRemark___frontmatter___category1' |
+  'childMarkdownRemark___frontmatter___category2' |
   'childMarkdownRemark___excerpt' |
   'childMarkdownRemark___rawMarkdownBody' |
   'childMarkdownRemark___fileAbsolutePath' |
@@ -1449,9 +1450,10 @@ export type MarkdownRemarkEdge = {
 export type MarkdownRemarkFieldsEnum = 
   'id' |
   'frontmatter___title' |
+  'frontmatter___category1' |
   'frontmatter___date' |
   'frontmatter___slug' |
-  'frontmatter___category1' |
+  'frontmatter___category2' |
   'excerpt' |
   'rawMarkdownBody' |
   'fileAbsolutePath' |
@@ -1572,9 +1574,10 @@ export type MarkdownRemarkFilterInput = {
 
 export type MarkdownRemarkFrontmatter = {
   title?: Maybe<Scalars['String']>,
+  category1?: Maybe<Scalars['String']>,
   date?: Maybe<Scalars['Date']>,
   slug?: Maybe<Scalars['String']>,
-  category1?: Maybe<Scalars['String']>,
+  category2?: Maybe<Scalars['String']>,
 };
 
 
@@ -1587,9 +1590,10 @@ export type MarkdownRemarkFrontmatterDateArgs = {
 
 export type MarkdownRemarkFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>,
+  category1?: Maybe<StringQueryOperatorInput>,
   date?: Maybe<DateQueryOperatorInput>,
   slug?: Maybe<StringQueryOperatorInput>,
-  category1?: Maybe<StringQueryOperatorInput>,
+  category2?: Maybe<StringQueryOperatorInput>,
 };
 
 export type MarkdownRemarkGroupConnection = {
@@ -2446,6 +2450,7 @@ export type SitePageFieldsEnum =
   'pluginCreator___version' |
   'pluginCreator___pluginOptions___name' |
   'pluginCreator___pluginOptions___path' |
+  'pluginCreator___pluginOptions___excerpt_separator' |
   'pluginCreator___pluginOptions___fileName' |
   'pluginCreator___pluginOptions___documentPaths' |
   'pluginCreator___pluginOptions___codegenDelay' |
@@ -2458,6 +2463,18 @@ export type SitePageFieldsEnum =
   'pluginCreator___pluginOptions___shortname' |
   'pluginCreator___pluginOptions___whitelist' |
   'pluginCreator___pluginOptions___fonts___google' |
+  'pluginCreator___pluginOptions___trackingId' |
+  'pluginCreator___pluginOptions___head' |
+  'pluginCreator___pluginOptions___anonymize' |
+  'pluginCreator___pluginOptions___respectDNT' |
+  'pluginCreator___pluginOptions___exclude' |
+  'pluginCreator___pluginOptions___pageTransitionDelay' |
+  'pluginCreator___pluginOptions___optimizeId' |
+  'pluginCreator___pluginOptions___experimentId' |
+  'pluginCreator___pluginOptions___variationId' |
+  'pluginCreator___pluginOptions___sampleRate' |
+  'pluginCreator___pluginOptions___siteSpeedSampleRate' |
+  'pluginCreator___pluginOptions___cookieDomain' |
   'pluginCreator___pluginOptions___pathCheck' |
   'pluginCreator___nodeAPIs' |
   'pluginCreator___browserAPIs' |
@@ -2647,6 +2664,7 @@ export type SitePluginFieldsEnum =
   'version' |
   'pluginOptions___name' |
   'pluginOptions___path' |
+  'pluginOptions___excerpt_separator' |
   'pluginOptions___fileName' |
   'pluginOptions___documentPaths' |
   'pluginOptions___codegenDelay' |
@@ -2661,6 +2679,18 @@ export type SitePluginFieldsEnum =
   'pluginOptions___fonts___google' |
   'pluginOptions___fonts___google___family' |
   'pluginOptions___fonts___google___variants' |
+  'pluginOptions___trackingId' |
+  'pluginOptions___head' |
+  'pluginOptions___anonymize' |
+  'pluginOptions___respectDNT' |
+  'pluginOptions___exclude' |
+  'pluginOptions___pageTransitionDelay' |
+  'pluginOptions___optimizeId' |
+  'pluginOptions___experimentId' |
+  'pluginOptions___variationId' |
+  'pluginOptions___sampleRate' |
+  'pluginOptions___siteSpeedSampleRate' |
+  'pluginOptions___cookieDomain' |
   'pluginOptions___pathCheck' |
   'nodeAPIs' |
   'browserAPIs' |
@@ -2776,6 +2806,7 @@ export type SitePluginPackageJsonPeerDependenciesFilterListInput = {
 export type SitePluginPluginOptions = {
   name?: Maybe<Scalars['String']>,
   path?: Maybe<Scalars['String']>,
+  excerpt_separator?: Maybe<Scalars['String']>,
   fileName?: Maybe<Scalars['String']>,
   documentPaths?: Maybe<Array<Maybe<Scalars['String']>>>,
   codegenDelay?: Maybe<Scalars['Int']>,
@@ -2788,12 +2819,25 @@ export type SitePluginPluginOptions = {
   shortname?: Maybe<Scalars['String']>,
   whitelist?: Maybe<Array<Maybe<Scalars['String']>>>,
   fonts?: Maybe<SitePluginPluginOptionsFonts>,
+  trackingId?: Maybe<Scalars['String']>,
+  head?: Maybe<Scalars['Boolean']>,
+  anonymize?: Maybe<Scalars['Boolean']>,
+  respectDNT?: Maybe<Scalars['Boolean']>,
+  exclude?: Maybe<Array<Maybe<Scalars['String']>>>,
+  pageTransitionDelay?: Maybe<Scalars['Int']>,
+  optimizeId?: Maybe<Scalars['String']>,
+  experimentId?: Maybe<Scalars['String']>,
+  variationId?: Maybe<Scalars['String']>,
+  sampleRate?: Maybe<Scalars['Int']>,
+  siteSpeedSampleRate?: Maybe<Scalars['Int']>,
+  cookieDomain?: Maybe<Scalars['String']>,
   pathCheck?: Maybe<Scalars['Boolean']>,
 };
 
 export type SitePluginPluginOptionsFilterInput = {
   name?: Maybe<StringQueryOperatorInput>,
   path?: Maybe<StringQueryOperatorInput>,
+  excerpt_separator?: Maybe<StringQueryOperatorInput>,
   fileName?: Maybe<StringQueryOperatorInput>,
   documentPaths?: Maybe<StringQueryOperatorInput>,
   codegenDelay?: Maybe<IntQueryOperatorInput>,
@@ -2806,6 +2850,18 @@ export type SitePluginPluginOptionsFilterInput = {
   shortname?: Maybe<StringQueryOperatorInput>,
   whitelist?: Maybe<StringQueryOperatorInput>,
   fonts?: Maybe<SitePluginPluginOptionsFontsFilterInput>,
+  trackingId?: Maybe<StringQueryOperatorInput>,
+  head?: Maybe<BooleanQueryOperatorInput>,
+  anonymize?: Maybe<BooleanQueryOperatorInput>,
+  respectDNT?: Maybe<BooleanQueryOperatorInput>,
+  exclude?: Maybe<StringQueryOperatorInput>,
+  pageTransitionDelay?: Maybe<IntQueryOperatorInput>,
+  optimizeId?: Maybe<StringQueryOperatorInput>,
+  experimentId?: Maybe<StringQueryOperatorInput>,
+  variationId?: Maybe<StringQueryOperatorInput>,
+  sampleRate?: Maybe<IntQueryOperatorInput>,
+  siteSpeedSampleRate?: Maybe<IntQueryOperatorInput>,
+  cookieDomain?: Maybe<StringQueryOperatorInput>,
   pathCheck?: Maybe<BooleanQueryOperatorInput>,
 };
 
