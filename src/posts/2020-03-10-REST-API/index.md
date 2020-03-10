@@ -14,7 +14,7 @@ category2: 'network'
 
 ### REST 정의
 
-“Representational State Transfer” 의 약자로 HTTP `URI(Uniform Resource Identifier)`를 통해 자원(Resource)을 명시하고, `HTTP Method(POST, GET, PUT, DELETE)`를 통해 해당 자원에 대한 CRUD Operation을 적용하는 것을 의미합니다.
+“Representational State Transfer” 의 약자로 HTTP `URI`(Uniform Resource Identifier)를 통해 자원(Resource)을 명시하고, `HTTP Method`(POST, GET, PUT, DELETE)`를 통해 해당 자원에 대한 CRUD Operation을 적용하는 것을 의미합니다.
 
 
 
@@ -74,9 +74,9 @@ REST 서버는 다중 계층으로 구성될 수 있습니다. API Server는 순
 
 1. `URI`는 정보의 자원을 표현 (리소스명은 명사를 사용)
 
-2. 자원에 대한 행위는 `HTTP Method(GET, POST, PUT, DELETE 등)`로 표현
+2. 자원에 대한 행위는 `HTTP Method`(GET, POST, PUT, DELETE 등)로 표현
 
-```json
+```
 GET /members/delete/1 (x)
 DELETE /members/1     (o)
 ```
@@ -87,7 +87,7 @@ DELETE /members/1     (o)
 
 1. 슬래시 구분자(/)는 계층 관계를 나타내는 데 사용합니다.
 
-```json
+```
 http://restapi.example.com/houses/apartments
 http://restapi.example.com/animals/mammals/whales
 ```
@@ -100,10 +100,11 @@ http://restapi.example.com/animals/mammals/whales
 
 6. 파일 확장자는 URI에 포함시키지 않는다.
 
-```json
+```
 http://restapi.example.com/members/soccer/345/photo.jpg (x)
 
-REST API에서는 메시지 바디 내용의 포맷을 나타내기 위한 파일 확장자를 URI 안에 포함시키지 않고 Accept header를 사용합니다 .
+REST API에서는 메시지 바디 내용의 포맷을 나타내기 위한 파일 확장자를 
+URI 안에 포함시키지 않고 Accept header를 사용합니다 .
 ```
 
 
@@ -118,12 +119,15 @@ python으로 간단하게 요청 예시 코드를 짜보았습니다.
 import requests
 
 url = 'http://restapi.example.com/members'
-headers = { 'Accept': 'application/json', 'Content-Type': 'application/json' } # json 형식으로 주고 받음
+headers = { 
+  'Accept': 'application/json', 'Content-Type': 'application/json' 
+} # json 형식으로 주고 받음
 data = { 'username': 'username' }
 
 r = requests.post(url=url, json=data, headers=headers)
 
-print(r.json()) # {'code': 200, 'data': 'success'}
+print(r.json()) 
+# {'code': 200, 'data': 'success'}
 ```
 
 

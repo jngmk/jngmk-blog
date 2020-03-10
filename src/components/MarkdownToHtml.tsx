@@ -39,7 +39,7 @@ const MarkdownToHtml: React.FC<IMarkdownToHtmlProps> = React.memo(({ html }) => 
     h4 {
       margin-top: 2vh;
       margin-bottom: 1.5vh;
-      font-size: 4.7vw;
+      font-size: 4.35vw;
       font-weight: 700;
       ${mq[0]} {
         font-size: 1.7vh;
@@ -48,10 +48,10 @@ const MarkdownToHtml: React.FC<IMarkdownToHtmlProps> = React.memo(({ html }) => 
     h5 {
       margin-top: 2vh;
       margin-bottom: 1.5vh;
-      font-size: 4.7vw;
+      font-size: 4vw;
       font-weight: 700;
       ${mq[0]} {
-        font-size: 1.5vh;
+        font-size: 1.55vh;
       }
     }
     h6 {
@@ -59,8 +59,10 @@ const MarkdownToHtml: React.FC<IMarkdownToHtmlProps> = React.memo(({ html }) => 
       font-size: 4vw;
       font-weight: 400;
       ${mq[0]} {
-        font-size: 1.5vh;
+        font-size: 1.55vh;
       }
+
+
     }
   `
 

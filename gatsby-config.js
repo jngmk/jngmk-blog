@@ -17,7 +17,9 @@ module.exports = {
       resolve: `gatsby-transformer-remark`,
       options: {
         excerpt_separator: `<!-- end -->`,
-        plugins: [],
+        plugins: [
+          `gatsby-remark-prismjs`,
+        ],
       },
     },
     {
@@ -80,6 +82,10 @@ module.exports = {
               family: "Noto Sans KR",
               variants: ["100", "300", "400", "500", "700", "900"],
             },
+            {
+              family: "Courier Prime",
+              variants: ["400", "700"],
+            }
           ],
         },
       },
