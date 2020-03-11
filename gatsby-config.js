@@ -1,12 +1,12 @@
 module.exports = {
   siteMetadata: {
     title: `jngmk.dev`,
-    description: `경영학과를 졸업했고, 프론트엔드 개발자가 되길 희망합니다.`,
+    description: `경영학과를 졸업했고, 개발자가 되길 희망합니다.`,
     author: `jngmk`,
     siteUrl: `https://jngmk.netlify.com`,
     contact: {
       name: `김정`,
-      description: `경영학과를 졸업했고, 프론트엔드 개발자가 되길 희망합니다.`,
+      description: `경영학과를 졸업했고, 개발자가 되길 희망합니다.`,
       email: `kj7186@gmail.com`,
       github: `https://github.com/jngmk`,
       instagram: `https://www.instagram.com/jngmk/`,

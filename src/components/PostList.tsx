@@ -20,7 +20,7 @@ const PostList: FunctionComponent<IPostListProps> = memo(({ nodes }) => {
 
     li {
       list-style: none;
-      border-radius: 0.55vh;
+      border-radius: 5.5px;
       &:hover {
         background-color: #F3F4F2;
         h2 {
@@ -34,12 +34,12 @@ const PostList: FunctionComponent<IPostListProps> = memo(({ nodes }) => {
     p {
       font-size: 14px;
       color: #131614;
-      padding: 0 1.5vh 1.8vh;
+      padding: 0 9.5px 14px;
       ${mq[0]} {
         font-size: 16px;
       }
       ${mq[1]} {
-        padding: 0 2.2vh 1.8vh;
+        padding: 0 23px 19px;
       }
     }
   `

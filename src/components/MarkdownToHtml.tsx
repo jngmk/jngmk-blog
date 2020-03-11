@@ -17,84 +17,87 @@ const MarkdownToHtml: React.FC<IMarkdownToHtmlProps> = React.memo(
       }
       
       line-height: 2;
-      padding: 0 1.5vh;
+      padding: 0 11px;
       ${mq[1]} {
-        padding: 0 2.2vh;
+        padding: 0 23px;
       }
 
       h2 {
-        margin-top: 8.5vh;
-        margin-bottom: 1.5vh;
+        margin-top: 70px;
+        margin-bottom: 12px;
         font-size: 20px;
         font-weight: 700;
         ${mq[0]} {
-          margin-top: 6.5vh;
-          padding-bottom: 2vh;
-          border-bottom: 0.1vh solid #eeeeee;
+          margin-top: 65px;
+          margin-bottom: 15px;
+          padding-bottom: 15px;
+          border-bottom: 0.1px solid #eeeeee;
           font-size: 28px;
         }
       }
       h3 {
-        margin-top: 5.5vh;
-        margin-bottom: 1.3vh;
+        margin-top: 45px;
+        margin-bottom: 11px;
         font-size: 18px;
         font-weight: 700;
         ${mq[0]} {
-          margin-top: 3.5vh;
-          margin-bottom: 2vh;
+          margin-top: 36px;
+          margin-bottom: 21px;
           font-size: 24px;
         }
       }
       h4 {
-        margin-top: 3vh;
-        margin-bottom: 1.3vh;
+        margin-top: 25px;
+        margin-bottom: 11px;
         font-size: 16px;
         font-weight: 700;
         ${mq[0]} {
-          margin-top: 3vh;
+          margin-top: 31px;
+          margin-bottom: 14px;
           font-size: 20px;
         }
       }
       h5 {
-        margin-top: 2vh;
-        margin-bottom: 1.2vh;
+        margin-top: 16px;
+        margin-bottom: 11px;
         font-size: 14px;
         font-weight: 700;
         ${mq[0]} {
-          margin-top: 2vh;
+          margin-top: 20px;
+          margin-bottom: 12px;
           font-size: 16px;
         }
       }
       h6 {
-        margin: 2vh 0;
+        margin: 16px 0;
         font-size: 14px;
         font-weight: 400;
         ${mq[0]} {
-          margin: 3vh 0;
+          margin: 31px 0;
           font-size: 16px;
         }
       }
       ol {
-        margin-bottom: 1.2vh;
-        margin-left: 2.6vh;
+        margin-bottom: 12px;
+        margin-left: 21px;
         ${mq[0]} {
-          margin-left: 2vh;
+          margin-left: 20px;
         }
       }
       ul {
         margin: 0;
-        margin-bottom: 1.2vh;
+        margin-bottom: 12px;
         list-style-type: none;
         li:before {
           content: '•';
-          padding: 0 0.4vh;
+          padding: 0 4px;
         }
       }
       li {
-        margin-bottom: 0.5vh;
+        margin-bottom: 5px;
       }
       p {
-        margin-bottom: 1.5vh;
+        margin-bottom: 15px;
       }
     `;
 

@@ -12,26 +12,23 @@ const Navbar: FunctionComponent<INavbarProps> = memo(({ siteTitle }) => {
 
   const navbarCss = css`
     background-color: white;
-    border-bottom: 0.1vh solid #eeeeee;
-    margin-bottom: 1.5vh;
-    padding: 2vh 2.2vh;
+    border-bottom: 0.1px solid #eeeeee;
+    margin-bottom: 12px;
+    padding: 16px 18px;
     ${mq[1]} {
-      margin-bottom: 2vh;
-      padding: 2vh 3.5vh;
+      margin-bottom: 21px;
+      padding: 21px 36.5px;
     }
 
     div {
       display: inline-block;
       margin: 0;
-      font-size: 1.9vh;
-      ${mq[1]} {
-        font-size: 1.5vh;
-      }
       font-weight: 500;
+      font-size: 15.5px;
       a {
         color: #234c34;
         text-decoration: none;
-        margin-left: 2vh;
+        margin-left: 16px;
         ${mq[3]} {
           &:hover {
             color: #0d8d6c;
@@ -54,13 +51,10 @@ const Navbar: FunctionComponent<INavbarProps> = memo(({ siteTitle }) => {
     }
 
     .nav-main {
-      font-size: 2.2vh;
+      font-size: 17.5px;
       font-weight: 900;
       a {
         margin: 0;
-      }
-      ${mq[1]} {
-        font-size: 1.7vh;
       }
     }
   `;

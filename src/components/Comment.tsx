@@ -17,9 +17,9 @@ const Comment: FunctionComponent<IDisqusProps> = React.memo(props => {
   const mq = breakpoints.map(bp => `@media (min-width: ${bp}px)`);
 
   const commentCss = css`
-    padding: 0 1.5vh;
+    padding: 0 11px;
     ${mq[1]} {
-      padding: 0 2.2vh;
+      padding: 0 23px;
     }
   `
 
