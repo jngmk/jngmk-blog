@@ -16,26 +16,26 @@ const MarkdownToHtml: React.FC<IMarkdownToHtmlProps> = React.memo(
         font-size: 16px;
       }
       
-      line-height: 1.8;
+      line-height: 2;
       padding: 0 1.5vh;
       ${mq[1]} {
         padding: 0 2.2vh;
       }
 
       h2 {
-        margin-top: 3.5vh;
+        margin-top: 8.5vh;
         margin-bottom: 1.5vh;
         font-size: 20px;
         font-weight: 700;
         ${mq[0]} {
-          margin-top: 4.5vh;
+          margin-top: 6.5vh;
           padding-bottom: 2vh;
           border-bottom: 0.1vh solid #eeeeee;
           font-size: 28px;
         }
       }
       h3 {
-        margin-top: 1.5vh;
+        margin-top: 5.5vh;
         margin-bottom: 1.3vh;
         font-size: 18px;
         font-weight: 700;
@@ -46,17 +46,17 @@ const MarkdownToHtml: React.FC<IMarkdownToHtmlProps> = React.memo(
         }
       }
       h4 {
-        margin-top: 1.5vh;
+        margin-top: 3vh;
         margin-bottom: 1.3vh;
         font-size: 16px;
         font-weight: 700;
         ${mq[0]} {
-          margin-top: 2vh;
+          margin-top: 3vh;
           font-size: 20px;
         }
       }
       h5 {
-        margin-top: 1.5vh;
+        margin-top: 2vh;
         margin-bottom: 1.2vh;
         font-size: 14px;
         font-weight: 700;
@@ -94,7 +94,7 @@ const MarkdownToHtml: React.FC<IMarkdownToHtmlProps> = React.memo(
         margin-bottom: 0.5vh;
       }
       p {
-        margin-bottom: 1.2vh;
+        margin-bottom: 1.5vh;
       }
     `;
 
