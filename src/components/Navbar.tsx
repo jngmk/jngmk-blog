@@ -34,6 +34,12 @@ const Navbar: FunctionComponent<INavbarProps> = memo(({ siteTitle }) => {
           }
         }
       }
+      [aria-current]:not([aria-current="false"]) {
+        font-weight: 700;
+        &:hover {
+          color: #234c34;
+        }
+      }
     }
 
     .nav-container {
@@ -56,7 +62,7 @@ const Navbar: FunctionComponent<INavbarProps> = memo(({ siteTitle }) => {
     <nav css={navbarCss}>
       <div className="nav-container">
         <div className={`nav-main`}>
-          <Link to="/">{siteTitle}</Link>
+          <Link to="/" aria-current="false">{siteTitle}</Link>
         </div>
         <div>
           <Link to="/dev">dev</Link>

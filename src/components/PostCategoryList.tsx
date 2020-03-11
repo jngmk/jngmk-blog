@@ -11,18 +11,17 @@ const PostCategoryList:FunctionComponent<IPostCategoryListProps> = (props) => {
 
   const postCategoryListCss = css`
     display: inline-block;
-    margin: 1.5vh 0;
+    margin: 1.2vh 0 2.2vh;
     padding: 0 1.5vh;
     ${mq[1]} {
       padding: 0 2.2vh;
     }
   `;
 
-  console.log(categoryList)
   return (
     <div css={postCategoryListCss}>
       <PostCategoryItem categoryName={'All'} totalCount={totalCount} pagePath={`/${renderPage}`} />
-      {categoryList.map(category => <PostCategoryItem categoryName={category.fieldValue} totalCount={category.totalCount} pagePath={`/${renderPage}/${category.fieldValue}`} />)}
+      {categoryList.map((category, idx) => <PostCategoryItem key={idx} categoryName={category.fieldValue} totalCount={category.totalCount} pagePath={`/${renderPage}/${category.fieldValue}`} />)}
     </div>
   )
 }

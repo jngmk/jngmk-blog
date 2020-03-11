@@ -50,6 +50,7 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
               category2
             }
             excerpt(pruneLength: 150, truncate: true)
+            id
           }
         }
         totalCount
@@ -66,6 +67,7 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
               category2
             }
             excerpt(pruneLength: 150, truncate: true)
+            id
           }
         }
         totalCount

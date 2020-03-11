@@ -20,10 +20,11 @@ const Layout:FunctionComponent = memo(({ children }) => {
   )
 
   const layoutCss = css`
-    margin: 3.5vh auto 0;
     max-width: 960px;
+    margin: 2.5vh auto 0;
     padding: 0 0.8vh 3.5vh;
     ${mq[1]} {
+      margin: 3.5vh auto 0;
       padding: 0 1.4vh 3.5vh;
     }
   `

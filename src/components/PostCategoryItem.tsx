@@ -19,19 +19,38 @@ const PostCategoryItem: FunctionComponent<IPostCategoryItemProps> = props => {
 
   const postCategoryItemCss = css`
     display: inline-block;
+    margin-right: 0.7vh;
+
     a {
+      display: flex;
+      padding: 0.2vh 0.5vh;
       text-decoration: none;
+      border-radius: 0.55vh;
       color: #234c34;
+      ${mq[0]} {
+        padding: 0.4vh 0.5vh;
+      }
+      ${mq[1]} {
+        padding: 0.3vh 0.5vh;
+      }
       ${mq[3]} {
         &:hover {
           color: #0d8d6c;
         }
       }
     }
+    [aria-current] {
+      background-color: #234c34;
+      color: white;
+      &:hover {
+        color: white;
+      }
+    }
     p {
       margin: 0 0.2vh;
       display: inline-block;
       font-weight: 500;
+      font-size: 1.45vh;
     }
   `;
 

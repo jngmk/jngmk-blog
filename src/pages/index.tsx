@@ -30,7 +30,7 @@ const IndexPage: FunctionComponent = () => {
   return (
     <Layout>
       <SEO title="Home"/>
-      <PostCategoryList renderPage={''} totalCount={allMarkdownRemark.totalCount} categoryList={categoryList} />
+      <PostCategoryList renderPage={'/'} totalCount={allMarkdownRemark.totalCount} categoryList={categoryList} />
       <PostList nodes={allMarkdownRemark.nodes} />
     </Layout>
   );

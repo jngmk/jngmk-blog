@@ -3049,7 +3049,7 @@ export type Unnamed_4_Query = { allMarkdownRemark: { edges: Array<{ node: (
     & { group: Array<(
       Pick<MarkdownRemarkGroupConnection, 'fieldValue'>
       & { nodes: Array<(
-        Pick<MarkdownRemark, 'excerpt'>
+        Pick<MarkdownRemark, 'excerpt' | 'id'>
         & { frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'category1' | 'date' | 'slug' | 'category2'>> }
       )> }
     )> }
@@ -3058,7 +3058,7 @@ export type Unnamed_4_Query = { allMarkdownRemark: { edges: Array<{ node: (
     & { group: Array<(
       Pick<MarkdownRemarkGroupConnection, 'fieldValue'>
       & { nodes: Array<(
-        Pick<MarkdownRemark, 'excerpt'>
+        Pick<MarkdownRemark, 'excerpt' | 'id'>
         & { frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'category1' | 'date' | 'slug' | 'category2'>> }
       )> }
     )> }
