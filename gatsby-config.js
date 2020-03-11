@@ -1,8 +1,16 @@
 module.exports = {
   siteMetadata: {
     title: `jngmk.dev`,
-    description: `경영학과를 졸업했지만 개발자가 되길 희망합니다.`,
-    author: `@jngmk`,
+    description: `경영학과를 졸업했고, 프론트엔드 개발자가 되길 희망합니다.`,
+    author: `jngmk`,
+    siteUrl: `https://jngmk.netlify.com`,
+    contact: {
+      name: `김정`,
+      description: `경영학과를 졸업했고, 프론트엔드 개발자가 되길 희망합니다.`,
+      email: `kj7186@gmail.com`,
+      github: `https://github.com/jngmk`,
+      instagram: `https://www.instagram.com/jngmk/`,
+    }
   },
   plugins: [
     `gatsby-plugin-typescript`,
@@ -117,6 +125,40 @@ module.exports = {
         cookieDomain: "example.com",
       },
     },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output: `/some-other-sitemap.xml`,
+        // Exclude specific pages or groups of pages using glob parameters
+        // See: https://github.com/isaacs/minimatch
+        // The example below will exclude the single `path/to/page` and all routes beginning with `category`
+        // exclude: [`/category/*`, `/path/to/page`],
+        query: `
+          {
+            site {
+              siteMetadata {
+                siteUrl
+              }
+            }
+  
+            allSitePage {
+              edges {
+                node {
+                  path
+                }
+              }
+            }
+        }`,
+        serialize: ({ site, allSitePage }) =>
+          allSitePage.edges.map(edge => {
+            return {
+              url: site.siteMetadata.siteUrl + edge.node.path,
+              changefreq: `daily`,
+              priority: 0.7,
+            }
+          })
+      }
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

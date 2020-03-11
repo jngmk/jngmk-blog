@@ -12,7 +12,7 @@ const PostListTemplate: React.FC<IPostListTemplateProps> = React.memo(props => {
 
   return (
     <Layout>
-      <SEO title={category2} />
+      <SEO title={category2} url={`/${category1}/${category2}`} />
       <PostCategoryList renderPage={category1} totalCount={totalCount} categoryList={categoryList} />
       <PostList nodes={nodes} />
     </Layout>

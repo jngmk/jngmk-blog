@@ -81,7 +81,6 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
 
   const blogPostTemplate = path.resolve(`src/templates/PostTemplate.tsx`);
   const blogPostListTemplate = path.resolve(`src/templates/PostListTemplate.tsx`);
-  console.log(data.devCategoryList)
 
   data.allMarkdownRemark.edges.forEach(({ node }: any) => {
     createPage({

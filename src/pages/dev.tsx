@@ -32,7 +32,7 @@ const BlogPage: FunctionComponent = () => {
   const categoryList = allMarkdownRemark.group
   return (
     <Layout>
-      <SEO title="Dev"/>
+      <SEO title="Dev" url="/dev" />
       <PostCategoryList renderPage={'dev'} totalCount={allMarkdownRemark.totalCount} categoryList={categoryList} />
       <PostList nodes={allMarkdownRemark.nodes} />
     </Layout>

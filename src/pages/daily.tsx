@@ -30,7 +30,7 @@ const DailyPage: FunctionComponent = () => {
 
   return (
     <Layout>
-      <SEO title="Daily"/>
+      <SEO title="Daily" url="/daily" />
       <PostCategoryList renderPage={'daily'} totalCount={allMarkdownRemark.totalCount} categoryList={categoryList} />
       <PostList nodes={allMarkdownRemark.nodes} />
     </Layout>

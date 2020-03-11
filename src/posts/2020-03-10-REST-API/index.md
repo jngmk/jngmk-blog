@@ -134,7 +134,7 @@ print(r.json())
 
 
 
-## 레퍼런스
+## 참조
 
 - https://meetup.toast.com/posts/92
 - https://gmlwjd9405.github.io/2018/09/21/rest-and-restful.html

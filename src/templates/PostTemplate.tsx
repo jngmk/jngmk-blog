@@ -1,10 +1,10 @@
 import React, { FunctionComponent } from 'react';
 import Layout from '../components/Layout';
-import PostHeader from '../components/PostHeader'
-import MarkdownToHtml from '../components/MarkdownToHtml'
-import Comment from '../components/Comment'
-import { ITemplateProps } from '../interface'
-
+import SEO from '../components/SEO';
+import PostHeader from '../components/PostHeader';
+import MarkdownToHtml from '../components/MarkdownToHtml';
+import Comment from '../components/Comment';
+import { ITemplateProps } from '../interface';
 
 type IPostTemplateProps = ITemplateProps<{
   postId: string;
@@ -14,18 +14,22 @@ type IPostTemplateProps = ITemplateProps<{
   slug: string;
 }>;
 
-const PostTemplate: FunctionComponent<IPostTemplateProps> = React.memo(props => {
-  const { postId, title, date, html, slug } = props.pageContext
-  console.log(date)
-  return (
-    <Layout>
-      <PostHeader title={title} date={date} />
-      <MarkdownToHtml html={html} />
-      {/* <CommentCount config={disqusConfig} placeholder={'...'} /> */}
-      <Comment identifier={postId} slug={slug} title={title} />
-    </Layout>
-  );
-});
+const PostTemplate: FunctionComponent<IPostTemplateProps> = React.memo(
+  props => {
+    const { postId, title, date, html, slug } = props.pageContext;
+    console.log(date);
+    return (
+      <Layout>
+        <SEO title={title} url={slug}>
+          <PostHeader title={title} date={date} />
+          <MarkdownToHtml html={html} />
+          {/* <CommentCount config={disqusConfig} placeholder={'...'} /> */}
+          <Comment identifier={postId} slug={slug} title={title} />
+        </SEO>
+      </Layout>
+    );
+  }
+);
 
 PostTemplate.displayName = 'PostTemplate';
 
