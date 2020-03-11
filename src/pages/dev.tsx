@@ -19,15 +19,17 @@ const LatestPostListQuery = graphql`
         id
       }
       totalCount
+      group(field: frontmatter___category2) {
+        fieldValue
+        totalCount
+      }
     }
   }
-  
 `;
 
 const BlogPage: FunctionComponent = () => {
   const { allMarkdownRemark } = useStaticQuery<Query>(LatestPostListQuery);
-  const categoryList = [];
-
+  const categoryList = allMarkdownRemark.group
   return (
     <Layout>
       <SEO title="Dev"/>

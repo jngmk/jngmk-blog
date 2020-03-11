@@ -1,5 +1,5 @@
 import { ReplaceComponentRendererArgs } from 'gatsby';
-import { MarkdownRemark } from '../types/graphql-types'
+import { MarkdownRemark, MarkdownRemarkGroupConnection } from '../types/graphql-types'
 
 export type ITemplateProps<T> = ReplaceComponentRendererArgs['props'] & {
   pageContext: {
@@ -15,9 +15,10 @@ export interface IPostTemplateContext {
 }
 
 export interface IPostListTemplateContext {
-  title: string;
-  pagePath: string;
-  category: string;
+  category1: string;
+  category2: string;
+  categoryList: MarkdownRemarkGroupConnection[];
+  totalCount: number;
   nodes: Array<Pick<MarkdownRemark, 'frontmatter' | 'excerpt' | 'id'>>;
 }
 
@@ -31,7 +32,7 @@ export type IDisqusProps = {
 export type IPostCategoryListProps = {
   renderPage: string;
   totalCount: number;
-  categoryList: Array<string>;
+  categoryList: MarkdownRemarkGroupConnection[];
 }
 
 export type IPostCategoryItemProps = {

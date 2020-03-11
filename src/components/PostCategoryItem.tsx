@@ -6,6 +6,14 @@ import { IPostCategoryItemProps } from '../interface';
 const PostCategoryItem: FunctionComponent<IPostCategoryItemProps> = props => {
   const { categoryName, totalCount, pagePath } = props;
 
+//   const categoryItem = graphql`
+//   query MyQuery($categoryName: String = ${categoryName}) {
+//     allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}, filter: {frontmatter: {category2: {eq: $categoryName}}}) {
+//       totalCount
+//     }
+//   }
+// `;
+
   const breakpoints = [576, 768, 992, 1200];
   const mq = breakpoints.map(bp => `@media (min-width: ${bp}px)`);
 

@@ -1,20 +1,21 @@
 import React from 'react';
 import { IPostListTemplateContext, ITemplateProps } from '../interface';
-// import PostCategory from '../components/PostList';
+import PostCategoryList from '../components/PostCategoryList';
 import PostList from '../components/PostList';
 import SEO from '../components/SEO';
+import Layout from '../components/Layout';
 
 type IPostListTemplateProps = ITemplateProps<IPostListTemplateContext>;
 
 const PostListTemplate: React.FC<IPostListTemplateProps> = React.memo(props => {
-  const { title, pagePath, nodes } = props.pageContext;
+  const { category1, category2, categoryList, totalCount, nodes } = props.pageContext;
 
   return (
-    <>
-      <SEO title={title} />
-      {/* <PostCategory /> */}
+    <Layout>
+      <SEO title={category2} />
+      <PostCategoryList renderPage={category1} totalCount={totalCount} categoryList={categoryList} />
       <PostList nodes={nodes} />
-    </>
+    </Layout>
   );
 });
 

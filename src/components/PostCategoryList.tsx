@@ -18,9 +18,11 @@ const PostCategoryList:FunctionComponent<IPostCategoryListProps> = (props) => {
     }
   `;
 
+  console.log(categoryList)
   return (
     <div css={postCategoryListCss}>
       <PostCategoryItem categoryName={'All'} totalCount={totalCount} pagePath={`/${renderPage}`} />
+      {categoryList.map(category => <PostCategoryItem categoryName={category.fieldValue} totalCount={category.totalCount} pagePath={`/${renderPage}/${category.fieldValue}`} />)}
     </div>
   )
 }

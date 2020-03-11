@@ -21,12 +21,12 @@ const LatestPostListQuery = graphql`
       totalCount
     }
   }
-  
 `;
+
+export const categoryList = [];
 
 const DailyPage: FunctionComponent = () => {
   const { allMarkdownRemark } = useStaticQuery<Query>(LatestPostListQuery);
-  const categoryList = [];
 
   return (
     <Layout>
