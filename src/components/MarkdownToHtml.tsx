@@ -73,11 +73,20 @@ const MarkdownToHtml: React.FC<IMarkdownToHtmlProps> = React.memo(
           font-size: 16px;
         }
       }
-      ul, ol {
+      ol {
         margin-bottom: 1.2vh;
         margin-left: 2.6vh;
         ${mq[0]} {
           margin-left: 2vh;
+        }
+      }
+      ul {
+        margin: 0;
+        margin-bottom: 1.2vh;
+        list-style-type: none;
+        li:before {
+          content: '•';
+          padding: 0 0.4vh;
         }
       }
       li {
