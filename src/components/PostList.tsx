@@ -33,7 +33,7 @@ const PostList: FunctionComponent<IPostListProps> = memo(({ nodes }) => {
       text-decoration: none;
     }
     p {
-      font-size: 4.2vw;
+      font-size: 1.5vh;
       color: #131614;
       padding: 0 1.5vh 1.8vh;
       ${mq[0]} {

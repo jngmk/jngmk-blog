@@ -12,13 +12,13 @@ const PostHeader: FunctionComponent<IPostHeaderProps> = memo(
     const mq = breakpoints.map(bp => `@media (min-width: ${bp}px)`);
 
     const postHeaderCss = css`
-      padding: 1.8vh 1.5vh 0;
+      padding: 1.3vh 1.5vh 0;
       ${mq[1]} {
         padding: 1.8vh 2.2vh 0;
       }
       h2 {
         margin-bottom: 0.2vh;
-        font-size: 5.5vw;
+        font-size: 2vh;
         font-weight: 700;
         color: #131614;
         ${mq[0]} {
@@ -28,7 +28,7 @@ const PostHeader: FunctionComponent<IPostHeaderProps> = memo(
       ,
       time {
         margin-bottom: 1vh;
-        font-size: 4vw;
+        font-size: 1.5vh;
         font-weight: 300;
         color: #484742;
         ${mq[0]} {

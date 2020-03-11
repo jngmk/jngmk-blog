@@ -50,7 +50,10 @@ const PostCategoryItem: FunctionComponent<IPostCategoryItemProps> = props => {
       margin: 0 0.2vh;
       display: inline-block;
       font-weight: 500;
-      font-size: 1.45vh;
+      font-size: 1.65vh;
+      ${mq[1]} {
+        font-size: 1.45vh;
+      }
     }
   `;
 

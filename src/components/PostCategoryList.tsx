@@ -11,9 +11,10 @@ const PostCategoryList:FunctionComponent<IPostCategoryListProps> = (props) => {
 
   const postCategoryListCss = css`
     display: inline-block;
-    margin: 1.2vh 0 2.2vh;
+    margin: 1.2vh 0 1.2vh;
     padding: 0 1.5vh;
     ${mq[1]} {
+      margin: 1.2vh 0 2.2vh;
       padding: 0 2.2vh;
     }
   `;
