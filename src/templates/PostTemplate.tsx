@@ -20,12 +20,11 @@ const PostTemplate: FunctionComponent<IPostTemplateProps> = React.memo(
     console.log(date);
     return (
       <Layout>
-        <SEO title={title} url={slug}>
+        <SEO title={title} url={slug} />
           <PostHeader title={title} date={date} />
           <MarkdownToHtml html={html} />
           {/* <CommentCount config={disqusConfig} placeholder={'...'} /> */}
           <Comment identifier={postId} slug={slug} title={title} />
-        </SEO>
       </Layout>
     );
   }
