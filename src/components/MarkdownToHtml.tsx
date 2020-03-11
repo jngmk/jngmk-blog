@@ -15,7 +15,8 @@ const MarkdownToHtml: React.FC<IMarkdownToHtmlProps> = React.memo(
       ${mq[0]} {
         font-size: 16px;
       }
-      line-height: 1.5;
+      
+      line-height: 1.8;
       padding: 0 1.5vh;
       ${mq[1]} {
         padding: 0 2.2vh;
