@@ -1,6 +1,6 @@
 import React, { FunctionComponent, memo } from 'react';
 import { Link } from 'gatsby';
-import PostHeader from './PostHeader';
+import PostHeader from './PostListHeader';
 import { IPostListTemplateContext } from '../interface';
 import { css } from '@emotion/core'
 
@@ -20,7 +20,6 @@ const PostList: FunctionComponent<IPostListProps> = memo(({ nodes }) => {
 
     li {
       list-style: none;
-      
       border-radius: 0.55vh;
       &:hover {
         background-color: #F3F4F2;

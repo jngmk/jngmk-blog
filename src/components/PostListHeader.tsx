@@ -18,7 +18,7 @@ const PostHeader: FunctionComponent<IPostHeaderProps> = memo(
       }
       h2 {
         margin-bottom: 0.2vh;
-        font-size: 2.2vh;
+        font-size: 20px;
         font-weight: 700;
         color: #131614;
         ${mq[0]} {
@@ -28,7 +28,7 @@ const PostHeader: FunctionComponent<IPostHeaderProps> = memo(
       ,
       time {
         margin-bottom: 1vh;
-        font-size: 1.9vh;
+        font-size: 14px;
         font-weight: 300;
         color: #484742;
         ${mq[0]} {

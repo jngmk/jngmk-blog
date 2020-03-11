@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
-import PostHeader from '../components/PostHeader';
+import PostHeader from '../components/PostContentHeader';
 import MarkdownToHtml from '../components/MarkdownToHtml';
 import Comment from '../components/Comment';
 import { ITemplateProps } from '../interface';
