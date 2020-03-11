@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `jeong.kim`,
-    description: `concentrate`,
+    title: `jngmk.dev`,
+    description: `경영학과를 졸업했지만 개발자가 되길 희망합니다.`,
     author: `@jngmk`,
   },
   plugins: [
