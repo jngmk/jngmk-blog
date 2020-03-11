@@ -11,9 +11,9 @@ const MarkdownToHtml: React.FC<IMarkdownToHtmlProps> = React.memo(
     const mq = breakpoints.map(bp => `@media (min-width: ${bp}px)`);
 
     const markdownToHtmlCss = css`
-      font-size: 1.5vh;
+      font-size: 14px;
       ${mq[0]} {
-        font-size: 1.55vh;
+        font-size: 16px;
       }
       line-height: 1.5;
       padding: 0 1.5vh;
@@ -30,7 +30,7 @@ const MarkdownToHtml: React.FC<IMarkdownToHtmlProps> = React.memo(
           margin-top: 4.5vh;
           padding-bottom: 2vh;
           border-bottom: 0.1vh solid #eeeeee;
-          font-size: 2.7vh;
+          font-size: 28px;
         }
       }
       h3 {
@@ -41,7 +41,7 @@ const MarkdownToHtml: React.FC<IMarkdownToHtmlProps> = React.memo(
         ${mq[0]} {
           margin-top: 3.5vh;
           margin-bottom: 2vh;
-          font-size: 2.3vh;
+          font-size: 24px;
         }
       }
       h4 {
@@ -51,7 +51,7 @@ const MarkdownToHtml: React.FC<IMarkdownToHtmlProps> = React.memo(
         font-weight: 700;
         ${mq[0]} {
           margin-top: 2vh;
-          font-size: 1.7vh;
+          font-size: 20px;
         }
       }
       h5 {
@@ -61,16 +61,16 @@ const MarkdownToHtml: React.FC<IMarkdownToHtmlProps> = React.memo(
         font-weight: 700;
         ${mq[0]} {
           margin-top: 2vh;
-          font-size: 1.55vh;
+          font-size: 16px;
         }
       }
       h6 {
         margin: 2vh 0;
-        font-size: 1.5vh;
+        font-size: 14px;
         font-weight: 400;
         ${mq[0]} {
           margin: 3vh 0;
-          font-size: 1.55vh;
+          font-size: 16px;
         }
       }
       ul, ol {
