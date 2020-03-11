@@ -1,8 +1,8 @@
 ---
 title: 'REST API란?'
 date: '2020-03-10 19:24'
-slug: '/blog/network/2020-03-10-REST-API'
-category1: 'blog'
+slug: '/dev/network/2020-03-10-REST-API'
+category1: 'dev'
 category2: 'network'
 ---
 
@@ -113,7 +113,7 @@ URI 안에 포함시키지 않고 Accept header를 사용합니다 .
 
 ## REST API 요청 예시
 
-python으로 간단하게 요청 예시 코드를 짜보았습니다. 
+python으로 간단하게 요청 코드를 짜보았습니다. 
 
 ```python
 import requests

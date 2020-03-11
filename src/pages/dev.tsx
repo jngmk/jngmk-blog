@@ -8,7 +8,7 @@ import PostList from '../components/PostList';
 
 const LatestPostListQuery = graphql`
   query {
-    allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}, filter: {frontmatter: {category1: {eq: "blog"}}}) {
+    allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}, filter: {frontmatter: {category1: {eq: "dev"}}}) {
       nodes {
         frontmatter {
           title
@@ -30,8 +30,8 @@ const BlogPage: FunctionComponent = () => {
 
   return (
     <Layout>
-      <SEO title="Blog"/>
-      <PostCategoryList renderPage={'blog'} totalCount={allMarkdownRemark.totalCount} categoryList={categoryList} />
+      <SEO title="Dev"/>
+      <PostCategoryList renderPage={'dev'} totalCount={allMarkdownRemark.totalCount} categoryList={categoryList} />
       <PostList nodes={allMarkdownRemark.nodes} />
     </Layout>
   );

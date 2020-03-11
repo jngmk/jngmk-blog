@@ -59,7 +59,7 @@ const Navbar: FunctionComponent<INavbarProps> = memo(({ siteTitle }) => {
           <Link to="/">{siteTitle}</Link>
         </div>
         <div>
-          <Link to="/blog">blog</Link>
+          <Link to="/dev">dev</Link>
           <Link to="/daily">daily</Link>
           <Link to="/about">about</Link>
         </div>
