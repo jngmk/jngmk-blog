@@ -152,7 +152,8 @@ pre[class*='language-'] {
 }
 /* text highlight */
 :not(pre) > code[class*='language-'] {
-  padding: 0.1em;
+  font-family: 'Noto Sans KR', sans-serif;
+  padding: 1.2px 3.5px;
   border-radius: 0.3vh;
   color: #234c34;
   background: #234c3413;

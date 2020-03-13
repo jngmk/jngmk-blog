@@ -98,6 +98,9 @@ const MarkdownToHtml: React.FC<IMarkdownToHtmlProps> = React.memo(
       }
       p {
         margin-bottom: 15px;
+        a {
+          color: #234c34;
+        }
       }
       blockquote {
         p, a {
@@ -111,6 +114,12 @@ const MarkdownToHtml: React.FC<IMarkdownToHtmlProps> = React.memo(
       }
       a {
         color: hsla(0, 0%, 0%, 0.8);
+      }
+      code[class*='language-'] {
+        font-size: 13px;
+        ${mq[0]} {
+          font-size: 14px;
+        }
       }
     `;
 

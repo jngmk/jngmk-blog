@@ -42,7 +42,7 @@ tags: ['redis', 'cache']
 
 ### 개념
 
-**Re**mote **Di**ctionary **S**erver의 약어인 Redis는 데이터베이스, 캐시, 메시지 브로커 및 대기열로 사용하는 오픈 소스, 인 메모리 키-값 데이터 스토어이다.
+**Re**mote **Di**ctionary **S**erver의 약어인 Redis는 데이터베이스, 캐시, 메시지 브로커 및 대기열로 사용하는 오픈 소스, `in-memory` `key-value` 데이터 스토어이다.
 
 > 인메모리 데이터베이스(In-memory Database)는 데이터 스토리지의 메인 메모리에 설치되어 운영되는 방식의 데이터베이스 관리 시스템이다. [출처: [위키백과](https://ko.wikipedia.org/wiki/인메모리_데이터베이스)]
 
