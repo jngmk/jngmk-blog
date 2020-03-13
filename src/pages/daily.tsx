@@ -14,6 +14,7 @@ const LatestPostListQuery = graphql`
           title
           slug
           date
+          tags
         }
         excerpt(truncate: true, pruneLength: 150)
         id
@@ -31,7 +32,7 @@ const DailyPage: FunctionComponent = () => {
   return (
     <Layout>
       <SEO title="Daily" url="/daily" />
-      <PostCategoryList renderPage={'daily'} totalCount={allMarkdownRemark.totalCount} categoryList={categoryList} />
+      <PostCategoryList renderPage={'daily'} totalCount={allMarkdownRemark.totalCount} />
       <PostList nodes={allMarkdownRemark.nodes} />
     </Layout>
   );

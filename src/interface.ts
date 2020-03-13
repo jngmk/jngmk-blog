@@ -15,9 +15,8 @@ export interface IPostTemplateContext {
 }
 
 export interface IPostListTemplateContext {
-  category1: string;
-  category2: string;
-  categoryList: MarkdownRemarkGroupConnection[];
+  pagePath: string,
+  tagName: string;
   totalCount: number;
   nodes: Array<Pick<MarkdownRemark, 'frontmatter' | 'excerpt' | 'id'>>;
 }
@@ -32,11 +31,19 @@ export type IDisqusProps = {
 export type IPostCategoryListProps = {
   renderPage: string;
   totalCount: number;
-  categoryList: MarkdownRemarkGroupConnection[];
+  categoryList?: MarkdownRemarkGroupConnection[];
 }
 
 export type IPostCategoryItemProps = {
   categoryName: string;
   totalCount: number;
   pagePath: string;
+}
+
+export type IPostListTags = {
+  tags: Array<string>;
+}
+
+export type IPostListTagItem = {
+  tag: string;
 }

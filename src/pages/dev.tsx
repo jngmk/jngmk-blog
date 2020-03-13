@@ -14,6 +14,7 @@ const LatestPostListQuery = graphql`
           title
           slug
           date
+          tags
         }
         excerpt(truncate: true, pruneLength: 150)
         id
@@ -29,11 +30,11 @@ const LatestPostListQuery = graphql`
 
 const BlogPage: FunctionComponent = () => {
   const { allMarkdownRemark } = useStaticQuery<Query>(LatestPostListQuery);
-  const categoryList = allMarkdownRemark.group
+  // const categoryList = allMarkdownRemark.group
   return (
     <Layout>
       <SEO title="Dev" url="/dev" />
-      <PostCategoryList renderPage={'dev'} totalCount={allMarkdownRemark.totalCount} categoryList={categoryList} />
+      <PostCategoryList renderPage={'dev'} totalCount={allMarkdownRemark.totalCount}/>
       <PostList nodes={allMarkdownRemark.nodes} />
     </Layout>
   );

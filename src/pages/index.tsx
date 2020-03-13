@@ -14,6 +14,7 @@ const LatestPostListQuery = graphql`
           title
           slug
           date
+          tags
         }
         excerpt(truncate: true, pruneLength: 150)
         id
@@ -25,12 +26,11 @@ const LatestPostListQuery = graphql`
 
 const IndexPage: FunctionComponent = () => {
   const { allMarkdownRemark } = useStaticQuery<Query>(LatestPostListQuery);
-  const categoryList = [];
 
   return (
     <Layout>
       <SEO title="Home" url="/" />
-      <PostCategoryList renderPage={'/'} totalCount={allMarkdownRemark.totalCount} categoryList={categoryList} />
+      <PostCategoryList renderPage={'/'} totalCount={allMarkdownRemark.totalCount} />
       <PostList nodes={allMarkdownRemark.nodes} />
     </Layout>
   );

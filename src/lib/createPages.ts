@@ -3,10 +3,11 @@ import { Query, MarkdownRemarkConnection } from '../../types/graphql-types';
 import path from 'path';
 
 type ICreatePagesQeury = Query & {
-  devPage: MarkdownRemarkConnection
-  dailyPage: MarkdownRemarkConnection
   devCategoryList: MarkdownRemarkConnection
   dailyCategoryList: MarkdownRemarkConnection
+  devPage: MarkdownRemarkConnection
+  dailyPage: MarkdownRemarkConnection
+  tagPage:MarkdownRemarkConnection
 }
 
 export async function createPages({ actions, graphql }: CreatePagesArgs) {
@@ -26,20 +27,8 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
           }
         }
       }
-      devCategoryList: allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}, filter: {frontmatter: {category1: {eq: "dev"}}}) {
-        group(field: frontmatter___category2) {
-          fieldValue
-          totalCount
-        }
-      }
-      dailyCategoryList: allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}, filter: {frontmatter: {category1: {eq: "daily"}}}) {
-        group(field: frontmatter___category2) {
-          fieldValue
-          totalCount
-        }
-      }
-      devPage: allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}, filter: {frontmatter: {category1: {eq: "dev"}}}) {
-        group(field: frontmatter___category2) {
+      tagPage: allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}) {
+        group(field: frontmatter___tags) {
           fieldValue
           nodes {
             frontmatter {
@@ -48,29 +37,13 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
               date
               slug
               category2
+              tags
             }
             excerpt(pruneLength: 150, truncate: true)
             id
           }
+          totalCount
         }
-        totalCount
-      }
-      dailyPage: allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}, filter: {frontmatter: {category1: {eq: "daily"}}}) {
-        group(field: frontmatter___category2) {
-          fieldValue
-          nodes {
-            frontmatter {
-              title
-              category1
-              date
-              slug
-              category2
-            }
-            excerpt(pruneLength: 150, truncate: true)
-            id
-          }
-        }
-        totalCount
       }
     }
   `);
@@ -96,29 +69,42 @@ export async function createPages({ actions, graphql }: CreatePagesArgs) {
     });
   });
 
-  data.devPage.group.forEach(devNodes => {
-    createPage({
-      path: `/dev/${devNodes.fieldValue}`,
-      context: {
-        category1: `dev`,
-        category2: devNodes.fieldValue,
-        categoryList: data.devCategoryList.group,
-        totalCount: data.devPage.totalCount,
-        nodes: devNodes.nodes,
-      },
-      component: blogPostListTemplate,
-    });
-  });
+  // data.devPage.group.forEach(devNodes => {
+  //   createPage({
+  //     path: `/dev/${devNodes.fieldValue}`,
+  //     context: {
+  //       category1: `dev`,
+  //       category2: devNodes.fieldValue,
+  //       categoryList: data.devCategoryList.group,
+  //       totalCount: data.devPage.totalCount,
+  //       nodes: devNodes.nodes,
+  //     },
+  //     component: blogPostListTemplate,
+  //   });
+  // });
 
-  data.dailyPage.group.forEach(dailyNodes => {
+  // data.dailyPage.group.forEach(dailyNodes => {
+  //   createPage({
+  //     path: `/dev/${dailyNodes.fieldValue}`,
+  //     context: {
+  //       category1: `dev`,
+  //       category2: dailyNodes.fieldValue,
+  //       categoryList: data.dailyCategoryList.group,
+  //       totalCount: data.dailyPage.totalCount,
+  //       nodes: dailyNodes.nodes,
+  //     },
+  //     component: blogPostListTemplate,
+  //   });
+  // });
+
+  data.tagPage.group.forEach(tagNode => {
     createPage({
-      path: `/dev/${dailyNodes.fieldValue}`,
+      path: `/tag/${tagNode.fieldValue.replace(/\s/gi, "-")}`,
       context: {
-        category1: `dev`,
-        category2: dailyNodes.fieldValue,
-        categoryList: data.dailyCategoryList.group,
-        totalCount: data.dailyPage.totalCount,
-        nodes: dailyNodes.nodes,
+        pagePath: `/tag/${tagNode.fieldValue.replace(/\s/gi, "-")}`,
+        tagName: tagNode.fieldValue,
+        totalCount: tagNode.totalCount,
+        nodes: tagNode.nodes,
       },
       component: blogPostListTemplate,
     });

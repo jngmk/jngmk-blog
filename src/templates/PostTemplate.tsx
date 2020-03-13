@@ -17,7 +17,7 @@ type IPostTemplateProps = ITemplateProps<{
 const PostTemplate: FunctionComponent<IPostTemplateProps> = React.memo(
   props => {
     const { postId, title, date, html, slug } = props.pageContext;
-    console.log(date);
+    
     return (
       <Layout>
         <SEO title={title} url={slug} />

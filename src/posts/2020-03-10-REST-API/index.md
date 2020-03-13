@@ -4,6 +4,7 @@ date: '2020-03-10 19:24'
 slug: '/dev/network/2020-03-10-REST-API'
 category1: 'dev'
 category2: 'network'
+tags: ['network', 'REST', 'REST API']
 ---
 
 ###### REST API를 사용은 해봤지만, 누군가에게 설명을 해야할 때면 어디서부터 어떻게 설명해야할지 난감한 적이 많았다. 그래서 REST API에 대해 한 번쯤 정리해야겠다고 생각했는데, 여유 시간도 있고 정리해볼 기회가 생겨 글로 남겨봤다.

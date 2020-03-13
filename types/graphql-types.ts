@@ -693,6 +693,7 @@ export type FileFieldsEnum =
   'childMarkdownRemark___frontmatter___slug' |
   'childMarkdownRemark___frontmatter___category1' |
   'childMarkdownRemark___frontmatter___category2' |
+  'childMarkdownRemark___frontmatter___tags' |
   'childMarkdownRemark___excerpt' |
   'childMarkdownRemark___rawMarkdownBody' |
   'childMarkdownRemark___fileAbsolutePath' |
@@ -1454,6 +1455,7 @@ export type MarkdownRemarkFieldsEnum =
   'frontmatter___slug' |
   'frontmatter___category1' |
   'frontmatter___category2' |
+  'frontmatter___tags' |
   'excerpt' |
   'rawMarkdownBody' |
   'fileAbsolutePath' |
@@ -1578,6 +1580,7 @@ export type MarkdownRemarkFrontmatter = {
   slug?: Maybe<Scalars['String']>,
   category1?: Maybe<Scalars['String']>,
   category2?: Maybe<Scalars['String']>,
+  tags?: Maybe<Array<Maybe<Scalars['String']>>>,
 };
 
 
@@ -1594,6 +1597,7 @@ export type MarkdownRemarkFrontmatterFilterInput = {
   slug?: Maybe<StringQueryOperatorInput>,
   category1?: Maybe<StringQueryOperatorInput>,
   category2?: Maybe<StringQueryOperatorInput>,
+  tags?: Maybe<StringQueryOperatorInput>,
 };
 
 export type MarkdownRemarkGroupConnection = {
@@ -2299,25 +2303,10 @@ export type SitePageContext = {
   title?: Maybe<Scalars['String']>,
   date?: Maybe<Scalars['Date']>,
   slug?: Maybe<Scalars['String']>,
-  category1?: Maybe<Scalars['String']>,
-  category2?: Maybe<Scalars['String']>,
-  categoryList?: Maybe<Array<Maybe<SitePageContextCategoryList>>>,
+  pagePath?: Maybe<Scalars['String']>,
+  tagName?: Maybe<Scalars['String']>,
   totalCount?: Maybe<Scalars['Int']>,
   nodes?: Maybe<Array<Maybe<SitePageContextNodes>>>,
-};
-
-export type SitePageContextCategoryList = {
-  fieldValue?: Maybe<Scalars['String']>,
-  totalCount?: Maybe<Scalars['Int']>,
-};
-
-export type SitePageContextCategoryListFilterInput = {
-  fieldValue?: Maybe<StringQueryOperatorInput>,
-  totalCount?: Maybe<IntQueryOperatorInput>,
-};
-
-export type SitePageContextCategoryListFilterListInput = {
-  elemMatch?: Maybe<SitePageContextCategoryListFilterInput>,
 };
 
 export type SitePageContextFilterInput = {
@@ -2326,9 +2315,8 @@ export type SitePageContextFilterInput = {
   title?: Maybe<StringQueryOperatorInput>,
   date?: Maybe<DateQueryOperatorInput>,
   slug?: Maybe<StringQueryOperatorInput>,
-  category1?: Maybe<StringQueryOperatorInput>,
-  category2?: Maybe<StringQueryOperatorInput>,
-  categoryList?: Maybe<SitePageContextCategoryListFilterListInput>,
+  pagePath?: Maybe<StringQueryOperatorInput>,
+  tagName?: Maybe<StringQueryOperatorInput>,
   totalCount?: Maybe<IntQueryOperatorInput>,
   nodes?: Maybe<SitePageContextNodesFilterListInput>,
 };
@@ -2355,6 +2343,7 @@ export type SitePageContextNodesFrontmatter = {
   date?: Maybe<Scalars['Date']>,
   slug?: Maybe<Scalars['String']>,
   category2?: Maybe<Scalars['String']>,
+  tags?: Maybe<Array<Maybe<Scalars['String']>>>,
 };
 
 export type SitePageContextNodesFrontmatterFilterInput = {
@@ -2363,6 +2352,7 @@ export type SitePageContextNodesFrontmatterFilterInput = {
   date?: Maybe<DateQueryOperatorInput>,
   slug?: Maybe<StringQueryOperatorInput>,
   category2?: Maybe<StringQueryOperatorInput>,
+  tags?: Maybe<StringQueryOperatorInput>,
 };
 
 export type SitePageEdge = {
@@ -2469,11 +2459,8 @@ export type SitePageFieldsEnum =
   'context___title' |
   'context___date' |
   'context___slug' |
-  'context___category1' |
-  'context___category2' |
-  'context___categoryList' |
-  'context___categoryList___fieldValue' |
-  'context___categoryList___totalCount' |
+  'context___pagePath' |
+  'context___tagName' |
   'context___totalCount' |
   'context___nodes' |
   'context___nodes___frontmatter___title' |
@@ -2481,6 +2468,7 @@ export type SitePageFieldsEnum =
   'context___nodes___frontmatter___date' |
   'context___nodes___frontmatter___slug' |
   'context___nodes___frontmatter___category2' |
+  'context___nodes___frontmatter___tags' |
   'context___nodes___excerpt' |
   'context___nodes___id' |
   'pluginCreator___id' |
@@ -3081,25 +3069,13 @@ export type Unnamed_3_QueryVariables = {};
 export type Unnamed_3_Query = { allMarkdownRemark: { edges: Array<{ node: (
         Pick<MarkdownRemark, 'id' | 'html'>
         & { frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'date' | 'slug' | 'title'>> }
-      ) }> }, devCategoryList: { group: Array<Pick<MarkdownRemarkGroupConnection, 'fieldValue' | 'totalCount'>> }, dailyCategoryList: { group: Array<Pick<MarkdownRemarkGroupConnection, 'fieldValue' | 'totalCount'>> }, devPage: (
-    Pick<MarkdownRemarkConnection, 'totalCount'>
-    & { group: Array<(
-      Pick<MarkdownRemarkGroupConnection, 'fieldValue'>
+      ) }> }, tagPage: { group: Array<(
+      Pick<MarkdownRemarkGroupConnection, 'fieldValue' | 'totalCount'>
       & { nodes: Array<(
         Pick<MarkdownRemark, 'excerpt' | 'id'>
-        & { frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'category1' | 'date' | 'slug' | 'category2'>> }
+        & { frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'category1' | 'date' | 'slug' | 'category2' | 'tags'>> }
       )> }
-    )> }
-  ), dailyPage: (
-    Pick<MarkdownRemarkConnection, 'totalCount'>
-    & { group: Array<(
-      Pick<MarkdownRemarkGroupConnection, 'fieldValue'>
-      & { nodes: Array<(
-        Pick<MarkdownRemark, 'excerpt' | 'id'>
-        & { frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'category1' | 'date' | 'slug' | 'category2'>> }
-      )> }
-    )> }
-  ) };
+    )> } };
 
 export type Unnamed_4_QueryVariables = {};
 
@@ -3113,7 +3089,7 @@ export type Unnamed_5_Query = { allMarkdownRemark: (
     Pick<MarkdownRemarkConnection, 'totalCount'>
     & { nodes: Array<(
       Pick<MarkdownRemark, 'excerpt' | 'id'>
-      & { frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'slug' | 'date'>> }
+      & { frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'slug' | 'date' | 'tags'>> }
     )> }
   ) };
 
@@ -3124,7 +3100,7 @@ export type Unnamed_6_Query = { allMarkdownRemark: (
     Pick<MarkdownRemarkConnection, 'totalCount'>
     & { nodes: Array<(
       Pick<MarkdownRemark, 'excerpt' | 'id'>
-      & { frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'slug' | 'date'>> }
+      & { frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'slug' | 'date' | 'tags'>> }
     )>, group: Array<Pick<MarkdownRemarkGroupConnection, 'fieldValue' | 'totalCount'>> }
   ) };
 
@@ -3135,7 +3111,7 @@ export type Unnamed_7_Query = { allMarkdownRemark: (
     Pick<MarkdownRemarkConnection, 'totalCount'>
     & { nodes: Array<(
       Pick<MarkdownRemark, 'excerpt' | 'id'>
-      & { frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'slug' | 'date'>> }
+      & { frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'title' | 'slug' | 'date' | 'tags'>> }
     )> }
   ) };
 
