@@ -11,12 +11,12 @@ const MarkdownToHtml: React.FC<IMarkdownToHtmlProps> = React.memo(
     const mq = breakpoints.map(bp => `@media (min-width: ${bp}px)`);
 
     const markdownToHtmlCss = css`
+      line-height: 2;
+
       font-size: 14px;
       ${mq[0]} {
         font-size: 16px;
       }
-      
-      line-height: 2;
       padding: 0 11px;
       ${mq[1]} {
         padding: 0 23px;
@@ -98,6 +98,19 @@ const MarkdownToHtml: React.FC<IMarkdownToHtmlProps> = React.memo(
       }
       p {
         margin-bottom: 15px;
+      }
+      blockquote {
+        p, a {
+          color: hsla(0, 0%, 0%, 0.5);
+          font-style: italic;
+          font-size: 13px;
+          ${mq[0]} {
+            font-size: 15px;
+          }
+        }
+      }
+      a {
+        color: hsla(0, 0%, 0%, 0.8);
       }
     `;
 
