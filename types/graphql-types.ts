@@ -689,9 +689,9 @@ export type FileFieldsEnum =
   'internal___type' |
   'childMarkdownRemark___id' |
   'childMarkdownRemark___frontmatter___title' |
+  'childMarkdownRemark___frontmatter___category1' |
   'childMarkdownRemark___frontmatter___date' |
   'childMarkdownRemark___frontmatter___slug' |
-  'childMarkdownRemark___frontmatter___category1' |
   'childMarkdownRemark___frontmatter___category2' |
   'childMarkdownRemark___frontmatter___tags' |
   'childMarkdownRemark___excerpt' |
@@ -1451,9 +1451,9 @@ export type MarkdownRemarkEdge = {
 export type MarkdownRemarkFieldsEnum = 
   'id' |
   'frontmatter___title' |
+  'frontmatter___category1' |
   'frontmatter___date' |
   'frontmatter___slug' |
-  'frontmatter___category1' |
   'frontmatter___category2' |
   'frontmatter___tags' |
   'excerpt' |
@@ -1576,9 +1576,9 @@ export type MarkdownRemarkFilterInput = {
 
 export type MarkdownRemarkFrontmatter = {
   title?: Maybe<Scalars['String']>,
+  category1?: Maybe<Scalars['String']>,
   date?: Maybe<Scalars['Date']>,
   slug?: Maybe<Scalars['String']>,
-  category1?: Maybe<Scalars['String']>,
   category2?: Maybe<Scalars['String']>,
   tags?: Maybe<Array<Maybe<Scalars['String']>>>,
 };
@@ -1593,9 +1593,9 @@ export type MarkdownRemarkFrontmatterDateArgs = {
 
 export type MarkdownRemarkFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>,
+  category1?: Maybe<StringQueryOperatorInput>,
   date?: Maybe<DateQueryOperatorInput>,
   slug?: Maybe<StringQueryOperatorInput>,
-  category1?: Maybe<StringQueryOperatorInput>,
   category2?: Maybe<StringQueryOperatorInput>,
   tags?: Maybe<StringQueryOperatorInput>,
 };

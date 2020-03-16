@@ -100,6 +100,11 @@ const MarkdownToHtml: React.FC<IMarkdownToHtmlProps> = React.memo(
         margin-bottom: 15px;
         a {
           color: #234c34;
+          text-decoration: none;
+          &:hover {
+            color: #0d8d6c;
+          }
+        }
         }
       }
       blockquote {
