@@ -86,7 +86,7 @@ plt.show()
 
 아래와 같이 초록색 사각형이 그려졌다면 HOG 모델을 사용해 얼굴을 잘 찾
 
-![bts](./bts.png)
+![bts](bts.png)
 
 
 
@@ -108,7 +108,7 @@ plt.show()
 
 보진 않았지만 최근에 핫한 드라마인 이태원 클라쓰 배우들의 얼굴로 진행했다.
 
-![이태원클라쓰](./이태원클라쓰.jpg)
+![이태원클라쓰](이태원클라쓰.jpg)
 
 
 
@@ -160,7 +160,7 @@ for face in actor_faces:
 
 6명의 얼굴이 등록되어 있는데, 이 중 박서준의 얼굴로 테스트를 해보겠다. 
 
-![박서준](./박서준.jpg)
+![박서준](박서준.jpg)
 
 
 
@@ -182,7 +182,7 @@ plt.imshow(park)
 plt.show()
 ```
 
-![박서준 얼굴](./박서준 얼굴.png)
+![박서준 얼굴](박서준 얼굴.png)
 
 
 
@@ -211,7 +211,7 @@ plt.show()
 
 #### 등록된 얼굴들과 distance 비교하기
 
-for loop 를 돌면서 face_distance 함수를 이용해 비교해주면 된다. [[face_distance example](https://github.com/ageitgey/face_recognition/blob/master/examples/face_distance.py)]
+for loop 를 돌면서 face_distance 함수를 이용해 비교해주면 된다. [face_distance example](https://github.com/ageitgey/face_recognition/blob/master/examples/face_distance.py)
 
 ```python
 for face in actor_faces:
@@ -225,7 +225,7 @@ for face in actor_faces:
   plt.show()
 ```
 
-![거리 비교 결과](./거리 비교 결과.png)
+![거리 비교 결과](거리 비교 결과.png)
 
 #### 결론
 
