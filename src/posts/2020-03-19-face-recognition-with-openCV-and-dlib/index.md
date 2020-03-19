@@ -211,7 +211,7 @@ plt.show()
 
 #### 등록된 얼굴들과 distance 비교하기
 
-for loop 를 돌면서 face_distance 함수를 이용해 비교해주면 되는데, 왜 첫 번째 인자와 다르게, 두 번째 인자는 array 를 벗겨야 하는지 이유를 못 찾았다. 아무튼 결과는 아래와 같다.
+for loop 를 돌면서 face_distance 함수를 이용해 비교해주면 된다. [[face_distance example](https://github.com/ageitgey/face_recognition/blob/master/examples/face_distance.py)]
 
 ```python
 for face in actor_faces:
