@@ -7,7 +7,7 @@ category2: 'python'
 tags: ['python', 'dlib', 'openCV', 'colab']
 ---
 
-###### 연예인 닮은꼴 찾기, 스마트폰에서 인물별 사진 분류 기능 등에 사용되는 얼굴인식 기능을 구현해봤다. 매우 기초적인 방법으로 진행했고,  [openCV](https://opencv.org/) 와 dlib 기반의[ face-recognition 1.3.0](https://pypi.org/project/face-recognition/) 패키지를 사용했다.
+###### 연예인 닮은꼴 찾기, 스마트폰에서 인물별 사진 분류 기능 등에 사용되는 얼굴인식 기능을 ~~구현~~체험해봤다. 매우 기초적인 방법으로 진행했고, [openCV](https://opencv.org/) 와 dlib 기반의[ face-recognition 1.3.0](https://pypi.org/project/face-recognition/) 패키지를 사용했다.
 
 <!-- end -->
 
@@ -86,7 +86,7 @@ plt.show()
 
 아래와 같이 초록색 사각형이 그려졌다면 HOG 모델을 사용해 얼굴을 잘 찾
 
-![bts](/Users/jngmk/Desktop/blog resource/2020-03-19-face-recognition-with-openCV-and-dlib/bts.png)
+![bts](./bts.png)
 
 
 
@@ -108,7 +108,7 @@ plt.show()
 
 보진 않았지만 최근에 핫한 드라마인 이태원 클라쓰 배우들의 얼굴로 진행했다.
 
-![이태원클라쓰](/Users/jngmk/Desktop/blog resource/2020-03-19-face-recognition-with-openCV-and-dlib/이태원클라쓰.jpg)
+![이태원클라쓰](./이태원클라쓰.jpg)
 
 
 
@@ -152,7 +152,7 @@ for face in actor_faces:
   plt.show()
 ```
 
-![얼굴 크롭 결과](/Users/jngmk/Desktop/blog resource/2020-03-19-face-recognition-with-openCV-and-dlib/얼굴 크롭 결과.png)
+![얼굴 크롭 결과](./얼굴 크롭 결과.png)
 
 
 
@@ -160,7 +160,7 @@ for face in actor_faces:
 
 6명의 얼굴이 등록되어 있는데, 이 중 박서준의 얼굴로 테스트를 해보겠다. 
 
-![박서준](/Users/jngmk/Desktop/blog resource/2020-03-19-face-recognition-with-openCV-and-dlib/박서준.jpg)
+![박서준](./박서준.jpg)
 
 
 
@@ -182,7 +182,7 @@ plt.imshow(park)
 plt.show()
 ```
 
-![박서준 얼굴](/Users/jngmk/Desktop/blog resource/2020-03-19-face-recognition-with-openCV-and-dlib/박서준 얼굴.png)
+![박서준 얼굴](./박서준 얼굴.png)
 
 
 
@@ -205,7 +205,7 @@ plt.imshow(enc_park_face)
 plt.show()
 ```
 
-![인코딩 결과](/Users/jngmk/Desktop/blog resource/2020-03-19-face-recognition-with-openCV-and-dlib/인코딩 결과.png)
+![인코딩 결과](./인코딩 결과.png)
 
 
 
@@ -225,7 +225,7 @@ for face in actor_faces:
   plt.show()
 ```
 
-![거리 비교 결과](/Users/jngmk/Desktop/blog resource/2020-03-19-face-recognition-with-openCV-and-dlib/거리 비교 결과.png)
+![거리 비교 결과](./거리 비교 결과.png)
 
 #### 결론
 
