@@ -118,8 +118,10 @@ const MarkdownToHtml: React.FC<IMarkdownToHtmlProps> = React.memo(
         a {
           color: #234c34;
           text-decoration: none;
-          &:hover {
-            color: #0d8d6c;
+          ${mq[3]} {
+            &:hover {
+              color: #0d8d6c;
+            }
           }
         }
       }
