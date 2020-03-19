@@ -1,7 +1,7 @@
 ---
 title: 'Mysql 데이터 불러오기'
 date: '2020-03-16 18:39'
-slug: '/dev/server/2020-03-16-mysql-load-data-infile'
+slug: '/dev/database/2020-03-16-mysql-load-data-infile'
 category1: 'dev'
 category2: 'database'
 tags: ['database', 'mysql']
