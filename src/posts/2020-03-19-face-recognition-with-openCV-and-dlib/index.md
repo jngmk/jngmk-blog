@@ -211,7 +211,7 @@ plt.show()
 
 #### 등록된 얼굴들과 distance 비교하기
 
-for loop 를 돌면서 face_distance 함수를 이용해 비교해주면 된다. [face_distance example](https://github.com/ageitgey/face_recognition/blob/master/examples/face_distance.py)
+for loop 를 돌면서 `face_distance` 함수를 이용해 비교해주면 된다. [face_distance example](https://github.com/ageitgey/face_recognition/blob/master/examples/face_distance.py)
 
 ```python
 for face in actor_faces:
