@@ -27,6 +27,13 @@ module.exports = {
         excerpt_separator: `<!-- end -->`,
         plugins: [
           `gatsby-remark-prismjs`,
+          {
+            resolve: "gatsby-remark-external-links",
+            options: {
+              target: "_blank",
+              rel: "nofollow"
+            }
+          },
         ],
       },
     },
@@ -158,7 +165,7 @@ module.exports = {
             }
           })
       }
-    }
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
