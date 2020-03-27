@@ -11,7 +11,7 @@ tags: ['gatsby', 'error', 'manifest', 'sharp']
 
 ###### 오랜만에 포스팅을 하고 배포를 하는데 갑자기 에러가 발생했다. **Error: Input file contains unsupported image format** 라는 로그가 떴고, 이 에러로 고생하는 분들에게 도움이 되고자 글로 남긴다.
 
-<!--end-->
+<!-- end -->
 
 ## 에러 로그
 
