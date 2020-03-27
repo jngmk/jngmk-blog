@@ -1,7 +1,7 @@
 ---
 title: '백준 18809번 Gaaaaaaaaaarden'
 date: '2020-03-28 01:07'
-slug: '/dev/algorithm/2020-03-27-baekjoon-18809'
+slug: '/dev/algorithm/2020-03-28-baekjoon-18809'
 category1: 'dev'
 category2: 'algorithm'
 tags: ['algorithm', 'baekjoon', '시뮬레이션', '조합', '그래프', 'BFS', 'python']
@@ -9,15 +9,15 @@ tags: ['algorithm', 'baekjoon', '시뮬레이션', '조합', '그래프', 'BFS',
 
 
 
-정말 오랜만에 알고리즘 문제를 하나 풀었다. 삼성 코테 스타일의 시뮬레이션 문제였고, 조합과 BFS를 사용하여 해결했다. 
+###### 정말 오랜만에 알고리즘 문제를 하나 풀었다. 삼성 코테 스타일의 시뮬레이션 문제였고, 조합과 BFS를 사용하여 해결했다. 
 
 <!-- end -->
-
-문제: [https://www.acmicpc.net/problem/18809](https://www.acmicpc.net/problem/18809)
 
 
 
 ##  문제 요약
+
+문제: [https://www.acmicpc.net/problem/18809](https://www.acmicpc.net/problem/18809)
 
 input 첫 줄에는 N, M, G, R (행, 열, 녹색 배양액 개수, 적색 배양액 개수) 이 주어지고, 아랫 줄부터 N * M 모양의 배열이 주어진다. (단, 2 < N, M <= 50, 1 <= G, R <= 5)
 
