@@ -31,7 +31,7 @@ input 첫 줄에는 N, M, G, R (행, 열, 녹색 배양액 개수, 적색 배양
 
 ## 문제 풀이
 
-[전체 코드 보기]([https://github.com/jngmk/Training/blob/master/Python/BAEKJOON/18809%20Gaaaaaaaaaarden/18809.py](https://github.com/jngmk/Training/blob/master/Python/BAEKJOON/18809 Gaaaaaaaaaarden/18809.py))
+[전체 코드 보기](https://github.com/jngmk/Training/blob/master/Python/BAEKJOON/18809 Gaaaaaaaaaarden/18809.py)
 
 문제를 풀는 과정은 다음과 같다.
 
