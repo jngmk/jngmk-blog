@@ -4,7 +4,7 @@ date: '2020-04-03 00:11'
 slug: '/dev/algorithm/2020-04-03-move-the-blocks'
 category1: 'dev'
 category2: 'algorithm'
-tags: ['algorithm', 'programmers', '시뮬레이션', 'bfs' 'python']
+tags: ['algorithm', 'programmers', '시뮬레이션', 'bfs', 'python']
 
 ---
 
