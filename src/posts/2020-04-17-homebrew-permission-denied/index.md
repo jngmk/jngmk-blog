@@ -9,7 +9,7 @@ tags: ['error', 'homebrew', 'fontforge']
 
 
 
-###### `Homebrew` 를 이용하다 보면 **'Permission denied'** 라는 에러를 만나는 경우가 생긴다. 이를 해결하는 방법은 다음과 같다.
+###### Homebrew 를 이용하다 보면 **'Permission denied'** 라는 에러를 만나는 경우가 생긴다. 이를 해결하는 방법은 다음과 같다.
 
 <!-- end -->
 
