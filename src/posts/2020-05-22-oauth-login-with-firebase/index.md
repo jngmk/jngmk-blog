@@ -147,14 +147,14 @@ The JKS keystore uses a proprietary format. It is recommended to migrate to PKCS
 
 ```kotlin
 private fun logon() {
-        var providers = arrayListOf(
-            AuthUI.IdpConfig.EmailBuilder().build(),
-            AuthUI.IdpConfig.GoogleBuilder().build()
-        )
-        startActivityForResult(
-            AuthUI.getInstance().createSignInIntentBuilder().setAvailableProviders(providers).build(), AUTH_REQUEST_CODE
-        )
-    }
+  var providers = arrayListOf(
+    AuthUI.IdpConfig.EmailBuilder().build(),
+    AuthUI.IdpConfig.GoogleBuilder().build()
+  )
+  startActivityForResult(
+    AuthUI.getInstance().createSignInIntentBuilder().setAvailableProviders(providers).build(), AUTH_REQUEST_CODE
+  )
+}
 ```
 
 
