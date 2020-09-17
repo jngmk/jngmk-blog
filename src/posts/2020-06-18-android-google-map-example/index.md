@@ -2,8 +2,8 @@
 title: 'Android에서 Google Map 활용하기'
 date: '2020-06-18 16:26'
 slug: '/dev/app/2020-06-18-android-google-map-example'
-category1: 'app'
-category2: 'android'
+category1: 'dev'
+category2: 'app'
 tags: ['app', 'android', 'kotlin', 'google map', 'geocoder', 'view pager2']
 ---
 
