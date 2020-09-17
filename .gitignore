@@ -70,3 +70,6 @@ yarn-error.log
 
 # Graphql-codegen file
 ./types/graphql-types.ts
+
+# IDE
+.idea
